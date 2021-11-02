@@ -1,8 +1,0 @@
-read_verilog bytestriping.v
-hierarchy -check -top bytestriping
-proc; opt; fsm; opt; memory; opt
-techmap; opt 
-dfflibmap -liberty cmos_cells.lib
-abc -liberty cmos_cells.lib
-clean
-write_verilog bytestripingSynth.v
