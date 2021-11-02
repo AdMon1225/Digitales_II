@@ -1,0 +1,131 @@
+$date
+	Mon Aug 30 15:32:14 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module probadorMuxMem $end
+$var wire 1 ! selector $end
+$var wire 1 " reset_L $end
+$var wire 2 # data_out [1:0] $end
+$var wire 2 $ data_in1 [1:0] $end
+$var wire 2 % data_in0 [1:0] $end
+$var wire 1 & clk $end
+$scope module mux1 $end
+$var wire 1 ! selector $end
+$var wire 1 " reset_L $end
+$var wire 2 ' data_in1 [1:0] $end
+$var wire 2 ( data_in0 [1:0] $end
+$var wire 1 & clk $end
+$var reg 2 ) data_out [1:0] $end
+$var reg 2 * mout [1:0] $end
+$upscope $end
+$scope module pruebamux $end
+$var wire 2 + data_out [1:0] $end
+$var reg 1 & clk $end
+$var reg 2 , data_in0 [1:0] $end
+$var reg 2 - data_in1 [1:0] $end
+$var reg 1 " reset_L $end
+$var reg 1 ! selector $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 -
+b0 ,
+bx +
+b0 *
+bx )
+b0 (
+b0 '
+0&
+b0 %
+b0 $
+bx #
+0"
+0!
+$end
+#2
+b0 #
+b0 )
+b0 +
+1"
+1&
+#4
+0&
+#6
+b11 *
+b10 $
+b10 '
+b10 -
+b11 %
+b11 (
+b11 ,
+1&
+#8
+0&
+#10
+b11 #
+b11 )
+b11 +
+b0 *
+b0 $
+b0 '
+b0 -
+b1 %
+b1 (
+b1 ,
+1!
+1&
+#12
+0&
+#14
+b0 #
+b0 )
+b0 +
+b10 *
+b10 $
+b10 '
+b10 -
+b0 %
+b0 (
+b0 ,
+1&
+#16
+0&
+#18
+b10 #
+b10 )
+b10 +
+b0 *
+b1 $
+b1 '
+b1 -
+0!
+1&
+#20
+0&
+#22
+b0 #
+b0 )
+b0 +
+b11 *
+b10 $
+b10 '
+b10 -
+b11 %
+b11 (
+b11 ,
+1&
+#24
+0&
+#26
+b11 #
+b11 )
+b11 +
+1&
+#27

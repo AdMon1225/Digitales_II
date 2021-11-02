@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Oct 23 03:24:40 2021
+[*]
+[dumpfile] "/home/adrian/Documents/Verilog/Proyecto1/phy_rx/verificacionRX.vcd"
+[dumpfile_mtime] "Sat Oct 23 03:21:34 2021"
+[dumpfile_size] 319442
+[savefile] "/home/adrian/Documents/Verilog/Proyecto1/phy_rx/pruebas.gtkw"
+[timestart] 0
+[size] 1285 600
+[pos] 138 62
+*-8.101467 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoRX.
+[sst_width] 233
+[signals_width] 206
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@28
+BancoRX.clk_2f
+BancoRX.clk_4f
+BancoRX.clk_32f
+BancoRX.RX1.reset
+BancoRX.RX1.par_ser_1
+BancoRX.RX1.par_ser_2
+@22
+BancoRX.data_output[31:0]
+@28
+BancoRX.valid_output
+@22
+BancoRX.data_output_sint[31:0]
+@28
+BancoRX.valid_output_sint
+[pattern_trace] 1
+[pattern_trace] 0

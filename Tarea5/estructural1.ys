@@ -1,0 +1,5 @@
+read_verilog muxmemoriaconductual.v
+hierarchy -check -top mux_mem_conductual
+proc; opt; fsm; opt; memory; opt
+techmap; opt 
+write_verilog estructural1.v

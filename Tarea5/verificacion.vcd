@@ -1,0 +1,451 @@
+$date
+	Sun Sep 19 00:24:44 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module BUF $end
+$var wire 1 ! A $end
+$var wire 1 " Y $end
+$upscope $end
+$scope module DFFSR $end
+$var wire 1 # C $end
+$var wire 1 $ D $end
+$var wire 1 % R $end
+$var wire 1 & S $end
+$var reg 1 ' Q $end
+$upscope $end
+$scope module probadorVerificador $end
+$var wire 1 ( selector $end
+$var wire 1 ) reset_L $end
+$var wire 2 * data_outRetardos [1:0] $end
+$var wire 2 + data_outGenerico [1:0] $end
+$var wire 2 , data_outCond [1:0] $end
+$var wire 2 - data_in1 [1:0] $end
+$var wire 2 . data_in0 [1:0] $end
+$var wire 1 / clk $end
+$scope module muxCond $end
+$var wire 1 ( selector $end
+$var wire 1 ) reset_L $end
+$var wire 2 0 data_in1 [1:0] $end
+$var wire 2 1 data_in0 [1:0] $end
+$var wire 1 / clk $end
+$var reg 2 2 data_out [1:0] $end
+$var reg 2 3 mout [1:0] $end
+$upscope $end
+$scope module muxGen $end
+$var wire 1 ( selector $end
+$var wire 1 ) reset_L $end
+$var wire 2 4 mout [1:0] $end
+$var wire 2 5 data_in1 [1:0] $end
+$var wire 2 6 data_in0 [1:0] $end
+$var wire 1 / clk $end
+$var wire 2 7 _0_ [1:0] $end
+$var reg 2 8 data_out [1:0] $end
+$upscope $end
+$scope module muxRet $end
+$var wire 1 ( selector $end
+$var wire 1 ) reset_L $end
+$var wire 2 9 data_out [1:0] $end
+$var wire 2 : data_in1 [1:0] $end
+$var wire 2 ; data_in0 [1:0] $end
+$var wire 1 / clk $end
+$var wire 1 < _08_ $end
+$var wire 1 = _07_ $end
+$var wire 1 > _06_ $end
+$var wire 1 ? _05_ $end
+$var wire 1 @ _04_ $end
+$var wire 1 A _03_ $end
+$var wire 1 B _02_ $end
+$var wire 1 C _01_ $end
+$var wire 2 D _00_ [1:0] $end
+$scope module _09_ $end
+$var wire 1 E A $end
+$var wire 1 < Y $end
+$upscope $end
+$scope module _10_ $end
+$var wire 1 F A $end
+$var wire 1 C Y $end
+$upscope $end
+$scope module _11_ $end
+$var wire 1 G B $end
+$var wire 1 B Y $end
+$var wire 1 ( A $end
+$upscope $end
+$scope module _12_ $end
+$var wire 1 C B $end
+$var wire 1 A Y $end
+$var wire 1 ( A $end
+$upscope $end
+$scope module _13_ $end
+$var wire 1 A B $end
+$var wire 1 @ Y $end
+$var wire 1 ) A $end
+$upscope $end
+$scope module _14_ $end
+$var wire 1 B A $end
+$var wire 1 @ B $end
+$var wire 1 H Y $end
+$upscope $end
+$scope module _15_ $end
+$var wire 1 I A $end
+$var wire 1 ? Y $end
+$var wire 1 ( B $end
+$upscope $end
+$scope module _16_ $end
+$var wire 1 < A $end
+$var wire 1 > Y $end
+$var wire 1 ( B $end
+$upscope $end
+$scope module _17_ $end
+$var wire 1 > B $end
+$var wire 1 = Y $end
+$var wire 1 ) A $end
+$upscope $end
+$scope module _18_ $end
+$var wire 1 ? A $end
+$var wire 1 = B $end
+$var wire 1 J Y $end
+$upscope $end
+$scope module _19_ $end
+$var wire 1 K D $end
+$var wire 1 / C $end
+$var reg 1 L Q $end
+$upscope $end
+$scope module _20_ $end
+$var wire 1 M D $end
+$var wire 1 / C $end
+$var reg 1 N Q $end
+$upscope $end
+$upscope $end
+$scope module pruebaModelos $end
+$var wire 2 O data_outCond [1:0] $end
+$var wire 2 P data_outGenerico [1:0] $end
+$var wire 2 Q data_outRetardos [1:0] $end
+$var reg 6 R checkerGenerico [5:0] $end
+$var reg 6 S checkerRetardo [5:0] $end
+$var reg 1 / clk $end
+$var reg 2 T data_in0 [1:0] $end
+$var reg 2 U data_in1 [1:0] $end
+$var reg 1 ) reset_L $end
+$var reg 1 ( selector $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 U
+b0 T
+b0 S
+b0 R
+bx Q
+bx P
+bx O
+xN
+xM
+xL
+xK
+xJ
+0I
+xH
+0G
+0F
+0E
+bx D
+xC
+xB
+xA
+x@
+x?
+x>
+x=
+x<
+b0 ;
+b0 :
+bx 9
+bx 8
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+bx 2
+b0 1
+b0 0
+0/
+b0 .
+b0 -
+bx ,
+bx +
+bx *
+0)
+0(
+x'
+z&
+z%
+z$
+z#
+x"
+z!
+$end
+#20
+1C
+1<
+#23
+1?
+1B
+#24
+1=
+1>
+1@
+1A
+z"
+#46
+0K
+0M
+0J
+b0 D
+0H
+#100
+b0 ,
+b0 2
+b0 O
+b0 +
+b0 8
+b0 P
+0L
+b0 *
+b0 9
+b0 Q
+0N
+1)
+1/
+#124
+0=
+0@
+#200
+0/
+#300
+b11 7
+b11 4
+1F
+1I
+1G
+b11 3
+b10 -
+b10 0
+b10 5
+b10 :
+b10 U
+b11 .
+b11 1
+b11 6
+b11 ;
+b11 T
+1/
+#320
+0C
+#323
+0?
+0B
+#346
+1K
+1M
+1J
+b11 D
+1H
+#400
+0/
+#500
+b0 7
+0F
+0G
+b0 4
+b0 3
+b11 ,
+b11 2
+b11 O
+b11 +
+b11 8
+b11 P
+1L
+b11 *
+b11 9
+b11 Q
+1N
+b0 -
+b0 0
+b0 5
+b0 :
+b0 U
+b1 .
+b1 1
+b1 6
+b1 ;
+b1 T
+1(
+1/
+#520
+1C
+#524
+0>
+#544
+0A
+#548
+1=
+#568
+1@
+#571
+0K
+b10 D
+0J
+#591
+0M
+b0 D
+0H
+#600
+0/
+#700
+b10 7
+b10 4
+1F
+0I
+b10 3
+b10 -
+b10 0
+b10 5
+b10 :
+b10 U
+b0 .
+b0 1
+b0 6
+b0 ;
+b0 T
+0N
+b0 *
+b0 9
+b0 Q
+0L
+b0 +
+b0 8
+b0 P
+b0 ,
+b0 2
+b0 O
+1/
+#720
+0C
+#744
+1A
+#768
+0@
+#791
+1M
+b10 D
+1H
+#800
+0/
+#900
+b0 7
+0F
+1E
+b0 4
+b0 3
+b10 ,
+b10 2
+b10 O
+b10 +
+b10 8
+b10 P
+b10 *
+b10 9
+b10 Q
+1N
+b1 -
+b1 0
+b1 5
+b1 :
+b1 U
+0(
+1/
+#920
+1C
+0<
+#923
+1?
+1B
+#924
+1>
+#946
+0M
+b0 D
+0H
+#948
+0=
+#1000
+0/
+#1100
+b11 7
+b11 4
+1F
+0E
+1I
+1G
+b11 3
+b10 -
+b10 0
+b10 5
+b10 :
+b10 U
+b11 .
+b11 1
+b11 6
+b11 ;
+b11 T
+b0 *
+b0 9
+b0 Q
+0N
+b0 +
+b0 8
+b0 P
+b0 ,
+b0 2
+b0 O
+1/
+#1120
+0C
+1<
+#1123
+0?
+0B
+#1146
+1K
+1M
+1J
+b11 D
+1H
+#1200
+0/
+#1300
+b11 ,
+b11 2
+b11 O
+b11 +
+b11 8
+b11 P
+1L
+b11 *
+b11 9
+b11 Q
+1N
+1/
+#1400
+0/
+#1500
+1/
+#1600
+0/

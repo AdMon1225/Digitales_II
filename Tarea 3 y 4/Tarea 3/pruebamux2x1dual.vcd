@@ -1,0 +1,395 @@
+$date
+	Thu Sep 16 23:22:35 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module mux_mem_conductual $end
+$var wire 1 ! clk $end
+$var wire 2 " data_in0 [1:0] $end
+$var wire 2 # data_in1 [1:0] $end
+$var wire 1 $ reset_L $end
+$var wire 1 % selector $end
+$var reg 2 & data_out [1:0] $end
+$var reg 2 ' mout [1:0] $end
+$upscope $end
+$scope module mux_mem_estructural $end
+$var wire 1 ( clk $end
+$var wire 2 ) data_in0 [1:0] $end
+$var wire 2 * data_in1 [1:0] $end
+$var wire 1 + reset_L $end
+$var wire 1 , selector $end
+$var wire 2 - mout1 [1:0] $end
+$var wire 2 . mout [1:0] $end
+$var wire 2 / data_out [1:0] $end
+$scope module FF0 $end
+$var wire 1 0 D $end
+$var wire 1 ( clk $end
+$var reg 1 1 Q $end
+$upscope $end
+$scope module FF1 $end
+$var wire 1 2 D $end
+$var wire 1 ( clk $end
+$var reg 1 3 Q $end
+$upscope $end
+$scope module mux0 $end
+$var wire 2 4 d0 [1:0] $end
+$var wire 2 5 d1 [1:0] $end
+$var wire 1 , selector $end
+$var wire 2 6 dout [1:0] $end
+$scope module mux0 $end
+$var wire 1 7 data_in0 $end
+$var wire 1 8 data_in1 $end
+$var wire 1 , selector $end
+$var wire 1 9 not_out $end
+$var wire 1 : data_out $end
+$var wire 1 ; and1_out $end
+$var wire 1 < and0_out $end
+$scope module AND0 $end
+$var wire 1 7 A $end
+$var wire 1 < C $end
+$var wire 1 9 B $end
+$upscope $end
+$scope module AND1 $end
+$var wire 1 8 A $end
+$var wire 1 , B $end
+$var wire 1 ; C $end
+$upscope $end
+$scope module NOT0 $end
+$var wire 1 , A $end
+$var wire 1 9 B $end
+$upscope $end
+$scope module OR0 $end
+$var wire 1 < A $end
+$var wire 1 ; B $end
+$var wire 1 : C $end
+$upscope $end
+$upscope $end
+$scope module mux1 $end
+$var wire 1 = data_in0 $end
+$var wire 1 > data_in1 $end
+$var wire 1 , selector $end
+$var wire 1 ? not_out $end
+$var wire 1 @ data_out $end
+$var wire 1 A and1_out $end
+$var wire 1 B and0_out $end
+$scope module AND0 $end
+$var wire 1 = A $end
+$var wire 1 B C $end
+$var wire 1 ? B $end
+$upscope $end
+$scope module AND1 $end
+$var wire 1 > A $end
+$var wire 1 , B $end
+$var wire 1 A C $end
+$upscope $end
+$scope module NOT0 $end
+$var wire 1 , A $end
+$var wire 1 ? B $end
+$upscope $end
+$scope module OR0 $end
+$var wire 1 B A $end
+$var wire 1 A B $end
+$var wire 1 @ C $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module mux1 $end
+$var wire 2 C d0 [1:0] $end
+$var wire 2 D d1 [1:0] $end
+$var wire 1 E selector $end
+$var wire 2 F dout [1:0] $end
+$scope module mux0 $end
+$var wire 1 G data_in0 $end
+$var wire 1 H data_in1 $end
+$var wire 1 E selector $end
+$var wire 1 I not_out $end
+$var wire 1 J data_out $end
+$var wire 1 K and1_out $end
+$var wire 1 L and0_out $end
+$scope module AND0 $end
+$var wire 1 G A $end
+$var wire 1 L C $end
+$var wire 1 I B $end
+$upscope $end
+$scope module AND1 $end
+$var wire 1 H A $end
+$var wire 1 E B $end
+$var wire 1 K C $end
+$upscope $end
+$scope module NOT0 $end
+$var wire 1 E A $end
+$var wire 1 I B $end
+$upscope $end
+$scope module OR0 $end
+$var wire 1 L A $end
+$var wire 1 K B $end
+$var wire 1 J C $end
+$upscope $end
+$upscope $end
+$scope module mux1 $end
+$var wire 1 M data_in0 $end
+$var wire 1 N data_in1 $end
+$var wire 1 E selector $end
+$var wire 1 O not_out $end
+$var wire 1 P data_out $end
+$var wire 1 Q and1_out $end
+$var wire 1 R and0_out $end
+$scope module AND0 $end
+$var wire 1 M A $end
+$var wire 1 R C $end
+$var wire 1 O B $end
+$upscope $end
+$scope module AND1 $end
+$var wire 1 N A $end
+$var wire 1 E B $end
+$var wire 1 Q C $end
+$upscope $end
+$scope module NOT0 $end
+$var wire 1 E A $end
+$var wire 1 O B $end
+$upscope $end
+$scope module OR0 $end
+$var wire 1 R A $end
+$var wire 1 Q B $end
+$var wire 1 P C $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module probadorlib $end
+$var wire 1 S selector $end
+$var wire 2 T dout [1:0] $end
+$var wire 2 U d1 [1:0] $end
+$var wire 2 V d0 [1:0] $end
+$scope module mux $end
+$var wire 1 S selector $end
+$var wire 2 W dout [1:0] $end
+$var wire 2 X d1 [1:0] $end
+$var wire 2 Y d0 [1:0] $end
+$scope module mux0 $end
+$var wire 1 Z data_in0 $end
+$var wire 1 [ data_in1 $end
+$var wire 1 S selector $end
+$var wire 1 \ not_out $end
+$var wire 1 ] data_out $end
+$var wire 1 ^ and1_out $end
+$var wire 1 _ and0_out $end
+$scope module AND0 $end
+$var wire 1 Z A $end
+$var wire 1 _ C $end
+$var wire 1 \ B $end
+$upscope $end
+$scope module AND1 $end
+$var wire 1 [ A $end
+$var wire 1 ^ C $end
+$var wire 1 S B $end
+$upscope $end
+$scope module NOT0 $end
+$var wire 1 \ B $end
+$var wire 1 S A $end
+$upscope $end
+$scope module OR0 $end
+$var wire 1 _ A $end
+$var wire 1 ^ B $end
+$var wire 1 ] C $end
+$upscope $end
+$upscope $end
+$scope module mux1 $end
+$var wire 1 ` data_in0 $end
+$var wire 1 a data_in1 $end
+$var wire 1 S selector $end
+$var wire 1 b not_out $end
+$var wire 1 c data_out $end
+$var wire 1 d and1_out $end
+$var wire 1 e and0_out $end
+$scope module AND0 $end
+$var wire 1 ` A $end
+$var wire 1 e C $end
+$var wire 1 b B $end
+$upscope $end
+$scope module AND1 $end
+$var wire 1 a A $end
+$var wire 1 d C $end
+$var wire 1 S B $end
+$upscope $end
+$scope module NOT0 $end
+$var wire 1 b B $end
+$var wire 1 S A $end
+$upscope $end
+$scope module OR0 $end
+$var wire 1 e A $end
+$var wire 1 d B $end
+$var wire 1 c C $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb $end
+$var wire 2 f dout [1:0] $end
+$var reg 1 g clk $end
+$var reg 2 h d0 [1:0] $end
+$var reg 2 i d1 [1:0] $end
+$var reg 1 S selector $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 i
+b0 h
+0g
+bx f
+xe
+xd
+xc
+xb
+0a
+0`
+x_
+x^
+x]
+x\
+0[
+0Z
+b0 Y
+b0 X
+bx W
+b0 V
+b0 U
+bx T
+0S
+xR
+xQ
+xP
+xO
+0N
+xM
+xL
+xK
+xJ
+xI
+0H
+xG
+bx F
+zE
+b0 D
+bx C
+xB
+xA
+x@
+x?
+z>
+z=
+x<
+x;
+x:
+x9
+z8
+z7
+bx 6
+bz 5
+bz 4
+x3
+x2
+x1
+x0
+bx /
+bx .
+bx -
+z,
+z+
+bz *
+bz )
+z(
+bz '
+bx &
+z%
+z$
+bz #
+bz "
+z!
+$end
+#20
+1b
+1\
+#24
+0K
+0Q
+0e
+0_
+0d
+0^
+#47
+0c
+b0 T
+b0 W
+b0 f
+0]
+#100
+1a
+1Z
+b1 U
+b1 X
+b1 i
+b10 V
+b10 Y
+b10 h
+1g
+#124
+1_
+#147
+b10 T
+b10 W
+b10 f
+1]
+#200
+0g
+#300
+1S
+1g
+#320
+0b
+0\
+#324
+1d
+#344
+0_
+#347
+b11 T
+b11 W
+b11 f
+1c
+#367
+b1 T
+b1 W
+b1 f
+0]
+#400
+0g
+#500
+0S
+1g
+#520
+1b
+1\
+#524
+0d
+#544
+1_
+#547
+b0 T
+b0 W
+b0 f
+0c
+#567
+b10 T
+b10 W
+b10 f
+1]
+#600
+0g
+#700
+1g

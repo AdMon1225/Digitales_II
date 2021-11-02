@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Oct 23 03:07:29 2021
+[*]
+[dumpfile] "/home/adrian/Documents/Verilog/Proyecto1/32a8/log328.vcd"
+[dumpfile_mtime] "Sat Oct 23 03:06:26 2021"
+[dumpfile_size] 18481
+[savefile] "/home/adrian/Documents/Verilog/Proyecto1/32a8/pruebas.gtkw"
+[timestart] 0
+[size] 1848 911
+[pos] -51 -51
+*-3.876765 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 233
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 252
+@28
+testbench_32_8.clk_4f
+testbench_32_8.clk_f
+@22
+testbench_32_8.data_in[31:0]
+@28
+testbench_32_8.valid
+@22
+testbench_32_8.data_out[7:0]
+testbench_32_8.data_out_sint[7:0]
+@28
+testbench_32_8.valid_out
+testbench_32_8.valid_out_sint
+[pattern_trace] 1
+[pattern_trace] 0

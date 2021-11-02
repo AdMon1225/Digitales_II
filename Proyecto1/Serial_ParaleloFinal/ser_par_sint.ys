@@ -1,0 +1,15 @@
+read_verilog ser_par.v 
+
+hierarchy -check -top ser_par
+
+proc; opt; memory; opt; fsm; opt;
+
+techmap; opt;
+
+dfflibmap -liberty cmos_cells.lib
+
+abc -liberty cmos_cells.lib
+
+clean
+
+write_verilog ser_par_sint.v
