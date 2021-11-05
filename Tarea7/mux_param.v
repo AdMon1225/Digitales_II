@@ -17,7 +17,7 @@ module word #(
         end 
         else if (reset == 1) begin
             data_out <= data_in;
-            salida_control <= data_in[3] | data_in[2] | data_in[1] | data_in[0];
+            salida_control <= data_in[3] | data_in[2] | data_in[1] | data_in[0]; //Esta salida, tal y como viene en el enunciado, va a ser el OR bitwise de los 4 bits de entrada. 
         end
     end
 endmodule
@@ -36,7 +36,8 @@ module mux_param #(
     output [WORD_NUM-1:0] salida_control
     );
     genvar i;
-    generate
+    generate //Este generate me va a generar 4 instancias del modulo 'word' y cada instancia tiene asignado un valor de 'i' distinto. 
+             //A cada instancia, le meto 4 bits del bus de 16 de entrada e invierte el sentido de la entrada. 
 	    for (i = 0; i < WORD_NUM; i = i + 1) begin : MEM
             word #(
                 .BUS_SIZE(BUS_SIZE),

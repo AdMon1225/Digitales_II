@@ -7,7 +7,7 @@ module FSM(
     parameter BUS_SIZE  = 16;
     parameter WORD_SIZE = 4;
 
-    reg [WORD_SIZE-1:0] counter;
+    reg [WORD_SIZE-1:0] counter; //El contador nos sirve para verificar que en los ultimos 4 bits de data_in se siga la secuencia 0, 1, 2, 3,...
     reg [3:0] state , next_state;
     
 
