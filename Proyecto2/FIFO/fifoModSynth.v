@@ -126,134 +126,134 @@ module controlSynth(full_umbral, empty_umbral, clk, reset, fifo_wr, fifo_rd, alm
     .Y(_011_)
   );
   NOR _067_ (
-    .A(_003_),
-    .B(full_umbral[2]),
+    .A(contador[0]),
+    .B(contador[1]),
     .Y(_012_)
   );
-  NOR _068_ (
-    .A(contador[2]),
-    .B(_009_),
+  NAND _068_ (
+    .A(_001_),
+    .B(_002_),
     .Y(_013_)
   );
   NOR _069_ (
-    .A(_002_),
-    .B(full_umbral[1]),
+    .A(contador[2]),
+    .B(_013_),
     .Y(_014_)
   );
-  NOR _070_ (
-    .A(contador[1]),
-    .B(_008_),
+  NAND _070_ (
+    .A(_003_),
+    .B(_012_),
     .Y(_015_)
   );
   NOR _071_ (
-    .A(contador[0]),
-    .B(_007_),
+    .A(_003_),
+    .B(full_umbral[2]),
     .Y(_016_)
   );
   NOR _072_ (
-    .A(_015_),
-    .B(_016_),
+    .A(contador[2]),
+    .B(_009_),
     .Y(_017_)
   );
   NOR _073_ (
-    .A(_014_),
-    .B(_017_),
+    .A(_002_),
+    .B(full_umbral[1]),
     .Y(_018_)
   );
   NOR _074_ (
-    .A(_013_),
-    .B(_018_),
+    .A(contador[1]),
+    .B(_008_),
     .Y(_019_)
   );
   NOR _075_ (
-    .A(_012_),
-    .B(_019_),
+    .A(contador[0]),
+    .B(_007_),
     .Y(_020_)
   );
-  NAND _076_ (
-    .A(reset),
+  NOR _076_ (
+    .A(_019_),
     .B(_020_),
     .Y(_021_)
   );
   NOR _077_ (
-    .A(contador[2]),
-    .B(_011_),
+    .A(_018_),
+    .B(_021_),
     .Y(_022_)
   );
   NOR _078_ (
-    .A(contador[1]),
-    .B(_010_),
+    .A(_017_),
+    .B(_022_),
     .Y(_023_)
   );
   NOR _079_ (
-    .A(_002_),
-    .B(empty_umbral[1]),
+    .A(_016_),
+    .B(_023_),
     .Y(_024_)
   );
-  NOR _080_ (
-    .A(_001_),
-    .B(empty_umbral[0]),
+  NAND _080_ (
+    .A(reset),
+    .B(_024_),
     .Y(_025_)
   );
   NOR _081_ (
-    .A(_024_),
+    .A(_015_),
     .B(_025_),
-    .Y(_026_)
+    .Y(empty)
   );
   NOR _082_ (
-    .A(_023_),
-    .B(_026_),
-    .Y(_027_)
+    .A(contador[2]),
+    .B(_011_),
+    .Y(_026_)
   );
   NOR _083_ (
     .A(_003_),
     .B(empty_umbral[2]),
-    .Y(_028_)
+    .Y(_027_)
   );
   NOR _084_ (
-    .A(_027_),
-    .B(_028_),
-    .Y(_029_)
+    .A(contador[1]),
+    .B(_010_),
+    .Y(_028_)
   );
   NOR _085_ (
-    .A(_022_),
-    .B(_029_),
-    .Y(_030_)
+    .A(_002_),
+    .B(empty_umbral[1]),
+    .Y(_029_)
   );
   NOR _086_ (
-    .A(_021_),
-    .B(_030_),
-    .Y(almost_empty)
+    .A(_001_),
+    .B(empty_umbral[0]),
+    .Y(_030_)
   );
   NOR _087_ (
-    .A(_004_),
-    .B(_020_),
-    .Y(almost_full)
-  );
-  NOR _088_ (
-    .A(contador[0]),
-    .B(contador[1]),
+    .A(_029_),
+    .B(_030_),
     .Y(_031_)
   );
-  NAND _089_ (
-    .A(_001_),
-    .B(_002_),
+  NOR _088_ (
+    .A(_028_),
+    .B(_031_),
     .Y(_032_)
   );
-  NOR _090_ (
-    .A(contador[2]),
+  NOR _089_ (
+    .A(_027_),
     .B(_032_),
     .Y(_033_)
   );
-  NAND _091_ (
-    .A(_003_),
-    .B(_031_),
+  NOR _090_ (
+    .A(_026_),
+    .B(_033_),
     .Y(_034_)
   );
-  NOR _092_ (
-    .A(_021_),
+  NOR _091_ (
+    .A(_025_),
     .B(_034_),
-    .Y(full)
+    .Y(almost_empty)
+  );
+  NOR _092_ (
+    .A(_004_),
+    .B(_024_),
+    .Y(almost_full)
   );
   NOR _093_ (
     .A(fifo_rd),
@@ -351,12 +351,12 @@ module controlSynth(full_umbral, empty_umbral, clk, reset, fifo_wr, fifo_rd, alm
   );
   NAND _112_ (
     .A(contador[2]),
-    .B(_032_),
+    .B(_013_),
     .Y(_052_)
   );
   NOR _113_ (
     .A(_005_),
-    .B(_033_),
+    .B(_014_),
     .Y(_053_)
   );
   NAND _114_ (
@@ -392,7 +392,7 @@ module controlSynth(full_umbral, empty_umbral, clk, reset, fifo_wr, fifo_rd, alm
     .D(_000_[2]),
     .Q(contador[2])
   );
-  assign empty = 1'h0;
+  assign full = 1'h0;
 endmodule
 
 (* top =  1  *)

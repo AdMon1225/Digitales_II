@@ -45,10 +45,10 @@ module control(
         else if (contador <= empty_umbral) begin
             almost_empty = 1;
             if (contador == 0) begin
-                full = 1;
+                empty = 1;
             end
             else begin
-                full = 0;
+                empty = 0;
             end
         end  
     end
