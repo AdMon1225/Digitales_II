@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed Nov 10 04:58:36 2021
+[*]
+[dumpfile] "/home/adrian/Documents/Digitales_II/Proyecto2/FIFO/verificacion.vcd"
+[dumpfile_mtime] "Wed Nov 10 04:55:40 2021"
+[dumpfile_size] 155554
+[savefile] "/home/adrian/Documents/Digitales_II/Proyecto2/FIFO/pruebas.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] 292 158
+*-13.198272 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[treeopen] testbench.fifoCond.
+[sst_width] 233
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@28
+testbench.clk
+testbench.reset
+@22
+testbench.fifo_in[11:0]
+@28
+testbench.fifo_wr
+testbench.fifo_rd
+@22
+testbench.fifo_out[11:0]
+testbench.fifo_outSynth[11:0]
+@28
+testbench.almost_empty
+testbench.almost_emptySynth
+testbench.empty
+testbench.emptySynth
+testbench.full
+testbench.fullSynth
+testbench.fifoCond.controllog.contador[2:0]
+[pattern_trace] 1
+[pattern_trace] 0
