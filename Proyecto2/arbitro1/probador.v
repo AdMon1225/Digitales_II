@@ -32,16 +32,15 @@ module probador(
         emptyFIFO <= 'b1111;
 
         @(posedge clk);
-        emptyFIFO <= 'b1111;
+        emptyFIFO <= 'b0001;
 
         @(posedge clk);
-        emptyFIFO <= 'b1111;
+        
 
         @(posedge clk);
-        emptyFIFO <= 'b1111;
+        emptyFIFO <= 'b0011;
 
         @(posedge clk);
-        emptyFIFO <= 0;
 
         @(posedge clk);
         

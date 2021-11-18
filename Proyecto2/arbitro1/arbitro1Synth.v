@@ -3,13 +3,13 @@
 (* top =  1  *)
 (* src = "arbitro1Synth.v:1" *)
 module arbitro1Synth(reset, clk, emptyFIFO, almost_fullFIFO, pop, push);
-  (* src = "arbitro1Synth.v:36" *)
+  (* src = "arbitro1Synth.v:40" *)
   wire [2:0] _000_;
-  (* src = "arbitro1Synth.v:36" *)
+  (* src = "arbitro1Synth.v:40" *)
   wire [2:0] _001_;
-  (* src = "arbitro1Synth.v:36" *)
+  (* src = "arbitro1Synth.v:40" *)
   wire [2:0] _002_;
-  (* src = "arbitro1Synth.v:36" *)
+  (* src = "arbitro1Synth.v:40" *)
   wire [2:0] _003_;
   wire _004_;
   wire _005_;
@@ -80,18 +80,30 @@ module arbitro1Synth(reset, clk, emptyFIFO, almost_fullFIFO, pop, push);
   wire _070_;
   wire _071_;
   wire _072_;
+  wire _073_;
+  wire _074_;
+  wire _075_;
+  wire _076_;
+  wire _077_;
+  wire _078_;
+  wire _079_;
+  wire _080_;
+  wire _081_;
+  wire _082_;
+  wire _083_;
+  wire _084_;
   (* src = "arbitro1Synth.v:4" *)
   input [3:0] almost_fullFIFO;
   (* src = "arbitro1Synth.v:2" *)
   input clk;
   (* src = "arbitro1Synth.v:8" *)
-  wire [2:0] contadorpeso0;
+  wire [2:0] contadorP0;
   (* src = "arbitro1Synth.v:8" *)
-  wire [2:0] contadorpeso1;
+  wire [2:0] contadorP1;
   (* src = "arbitro1Synth.v:8" *)
-  wire [2:0] contadorpeso2;
+  wire [2:0] contadorP2;
   (* src = "arbitro1Synth.v:8" *)
-  wire [2:0] contadorpeso3;
+  wire [2:0] contadorP3;
   (* src = "arbitro1Synth.v:3" *)
   input [3:0] emptyFIFO;
   (* src = "arbitro1Synth.v:5" *)
@@ -100,480 +112,544 @@ module arbitro1Synth(reset, clk, emptyFIFO, almost_fullFIFO, pop, push);
   output [3:0] push;
   (* src = "arbitro1Synth.v:2" *)
   input reset;
-  NOT _073_ (
-    .A(contadorpeso2[0]),
-    .Y(_019_)
-  );
-  NOT _074_ (
-    .A(contadorpeso2[2]),
-    .Y(_020_)
-  );
-  NOT _075_ (
-    .A(reset),
-    .Y(_021_)
-  );
-  NOT _076_ (
-    .A(contadorpeso2[1]),
-    .Y(_022_)
-  );
-  NOT _077_ (
-    .A(contadorpeso0[1]),
-    .Y(_023_)
-  );
-  NAND _078_ (
-    .A(contadorpeso1[0]),
-    .B(contadorpeso1[1]),
-    .Y(_024_)
-  );
-  NOR _079_ (
-    .A(contadorpeso1[2]),
-    .B(_024_),
-    .Y(_025_)
-  );
-  NOT _080_ (
-    .A(_025_),
-    .Y(_026_)
-  );
-  NOR _081_ (
-    .A(contadorpeso1[2]),
-    .B(_025_),
-    .Y(_027_)
-  );
-  NOR _082_ (
-    .A(almost_fullFIFO[0]),
-    .B(almost_fullFIFO[1]),
-    .Y(_028_)
-  );
-  NOR _083_ (
-    .A(almost_fullFIFO[2]),
-    .B(almost_fullFIFO[3]),
+  NOT _085_ (
+    .A(contadorP2[1]),
     .Y(_029_)
   );
-  NAND _084_ (
-    .A(_028_),
-    .B(_029_),
+  NOT _086_ (
+    .A(contadorP1[0]),
     .Y(_030_)
   );
-  NOT _085_ (
-    .A(_030_),
+  NOT _087_ (
+    .A(contadorP0[0]),
     .Y(_031_)
   );
-  NOR _086_ (
-    .A(emptyFIFO[0]),
-    .B(emptyFIFO[1]),
+  NOT _088_ (
+    .A(contadorP0[1]),
     .Y(_032_)
   );
-  NOR _087_ (
-    .A(emptyFIFO[2]),
-    .B(emptyFIFO[3]),
+  NOT _089_ (
+    .A(contadorP0[2]),
     .Y(_033_)
   );
-  NAND _088_ (
-    .A(_032_),
-    .B(_033_),
+  NOT _090_ (
+    .A(reset),
     .Y(_034_)
   );
-  NOT _089_ (
-    .A(_034_),
+  NOT _091_ (
+    .A(emptyFIFO[0]),
     .Y(_035_)
   );
-  NOR _090_ (
-    .A(_030_),
-    .B(_034_),
+  NAND _092_ (
+    .A(contadorP1[0]),
+    .B(contadorP1[1]),
     .Y(_036_)
   );
-  NAND _091_ (
-    .A(_031_),
-    .B(_035_),
+  NOR _093_ (
+    .A(contadorP1[2]),
+    .B(emptyFIFO[1]),
     .Y(_037_)
   );
-  NAND _092_ (
-    .A(contadorpeso0[2]),
-    .B(_036_),
+  NAND _094_ (
+    .A(_036_),
+    .B(_037_),
     .Y(_038_)
   );
-  NOR _093_ (
-    .A(_027_),
-    .B(_038_),
+  NOT _095_ (
+    .A(_038_),
     .Y(_039_)
   );
-  NOR _094_ (
-    .A(contadorpeso2[2]),
-    .B(_022_),
+  NOR _096_ (
+    .A(almost_fullFIFO[2]),
+    .B(almost_fullFIFO[3]),
     .Y(_040_)
   );
-  NAND _095_ (
-    .A(_020_),
-    .B(contadorpeso2[1]),
+  NOR _097_ (
+    .A(almost_fullFIFO[0]),
+    .B(almost_fullFIFO[1]),
     .Y(_041_)
   );
-  NOR _096_ (
-    .A(contadorpeso2[2]),
-    .B(contadorpeso2[1]),
+  NAND _098_ (
+    .A(_040_),
+    .B(_041_),
     .Y(_042_)
   );
-  NOR _097_ (
-    .A(contadorpeso3[1]),
-    .B(contadorpeso3[2]),
+  NOT _099_ (
+    .A(_042_),
     .Y(_043_)
   );
-  NOR _098_ (
-    .A(contadorpeso3[0]),
-    .B(_021_),
+  NOR _100_ (
+    .A(contadorP0[2]),
+    .B(emptyFIFO[0]),
     .Y(_044_)
   );
-  NAND _099_ (
-    .A(reset),
-    .B(_043_),
-    .Y(_045_)
-  );
-  NOR _100_ (
-    .A(contadorpeso3[0]),
-    .B(_045_),
-    .Y(_046_)
-  );
   NAND _101_ (
-    .A(_043_),
-    .B(_044_),
-    .Y(_047_)
+    .A(_033_),
+    .B(_035_),
+    .Y(_045_)
   );
   NOR _102_ (
     .A(_042_),
+    .B(_044_),
+    .Y(_046_)
+  );
+  NAND _103_ (
+    .A(_043_),
+    .B(_045_),
+    .Y(_047_)
+  );
+  NOR _104_ (
+    .A(_038_),
     .B(_047_),
     .Y(_048_)
   );
-  NAND _103_ (
-    .A(_039_),
-    .B(_048_),
-    .Y(_049_)
-  );
-  NOT _104_ (
-    .A(_049_),
-    .Y(_003_[0])
-  );
   NAND _105_ (
     .A(_039_),
-    .B(_042_),
-    .Y(_050_)
+    .B(_046_),
+    .Y(_049_)
   );
   NAND _106_ (
-    .A(_019_),
-    .B(_050_),
-    .Y(_051_)
+    .A(_030_),
+    .B(_049_),
+    .Y(_050_)
   );
   NOR _107_ (
-    .A(_019_),
-    .B(contadorpeso2[2]),
+    .A(contadorP3[0]),
+    .B(contadorP3[1]),
+    .Y(_051_)
+  );
+  NOT _108_ (
+    .A(_051_),
     .Y(_052_)
   );
-  NAND _108_ (
-    .A(_039_),
-    .B(_052_),
+  NOR _109_ (
+    .A(contadorP3[2]),
+    .B(emptyFIFO[3]),
     .Y(_053_)
   );
-  NOR _109_ (
-    .A(contadorpeso2[1]),
-    .B(_053_),
+  NOT _110_ (
+    .A(_053_),
     .Y(_054_)
   );
-  NAND _110_ (
-    .A(_046_),
-    .B(_051_),
+  NOR _111_ (
+    .A(_052_),
+    .B(_054_),
     .Y(_055_)
   );
-  NAND _111_ (
-    .A(contadorpeso2[0]),
-    .B(_039_),
+  NOR _112_ (
+    .A(contadorP2[1]),
+    .B(contadorP2[2]),
     .Y(_056_)
   );
-  NOR _112_ (
-    .A(contadorpeso2[2]),
-    .B(_056_),
+  NOT _113_ (
+    .A(_056_),
     .Y(_057_)
   );
-  NOR _113_ (
-    .A(_054_),
-    .B(_055_),
-    .Y(_002_[0])
-  );
   NOR _114_ (
-    .A(contadorpeso2[1]),
+    .A(emptyFIFO[2]),
     .B(_057_),
     .Y(_058_)
   );
   NOR _115_ (
-    .A(_047_),
+    .A(_055_),
     .B(_058_),
-    .Y(_002_[1])
-  );
-  NAND _116_ (
-    .A(contadorpeso2[2]),
-    .B(_046_),
     .Y(_059_)
   );
-  NOT _117_ (
-    .A(_059_),
-    .Y(_002_[2])
-  );
-  NOR _118_ (
-    .A(contadorpeso1[2]),
-    .B(_038_),
+  NOR _116_ (
+    .A(_039_),
+    .B(_059_),
     .Y(_060_)
   );
-  NOR _119_ (
-    .A(contadorpeso1[0]),
-    .B(_060_),
+  NAND _117_ (
+    .A(contadorP1[0]),
+    .B(_046_),
     .Y(_061_)
   );
-  NOT _120_ (
-    .A(_061_),
+  NOR _118_ (
+    .A(_060_),
+    .B(_061_),
     .Y(_062_)
   );
-  NAND _121_ (
-    .A(_046_),
-    .B(_062_),
+  NAND _119_ (
+    .A(reset),
+    .B(_050_),
     .Y(_063_)
   );
-  NAND _122_ (
-    .A(contadorpeso1[0]),
-    .B(_060_),
-    .Y(_064_)
-  );
-  NOT _123_ (
-    .A(_064_),
-    .Y(_065_)
-  );
-  NOR _124_ (
-    .A(contadorpeso1[1]),
-    .B(_064_),
-    .Y(_066_)
-  );
-  NOR _125_ (
-    .A(_063_),
-    .B(_066_),
+  NOR _120_ (
+    .A(_062_),
+    .B(_063_),
     .Y(_001_[0])
   );
-  NOR _126_ (
-    .A(contadorpeso1[1]),
-    .B(_065_),
+  NOR _121_ (
+    .A(_038_),
+    .B(_061_),
+    .Y(_064_)
+  );
+  NOR _122_ (
+    .A(contadorP1[1]),
+    .B(_064_),
+    .Y(_065_)
+  );
+  NAND _123_ (
+    .A(_038_),
+    .B(_059_),
+    .Y(_066_)
+  );
+  NAND _124_ (
+    .A(_038_),
+    .B(_046_),
     .Y(_067_)
   );
-  NOR _127_ (
-    .A(_047_),
-    .B(_067_),
-    .Y(_001_[1])
-  );
-  NAND _128_ (
-    .A(contadorpeso1[2]),
-    .B(_046_),
+  NOT _125_ (
+    .A(_067_),
     .Y(_068_)
   );
-  NOT _129_ (
-    .A(_068_),
-    .Y(_001_[2])
-  );
-  NOR _130_ (
-    .A(contadorpeso0[2]),
-    .B(_037_),
+  NAND _126_ (
+    .A(_059_),
+    .B(_068_),
     .Y(_069_)
   );
-  NAND _131_ (
-    .A(contadorpeso0[0]),
+  NAND _127_ (
+    .A(reset),
     .B(_069_),
     .Y(_070_)
   );
-  NOR _132_ (
-    .A(contadorpeso0[0]),
-    .B(_069_),
+  NOR _128_ (
+    .A(_065_),
+    .B(_070_),
+    .Y(_001_[1])
+  );
+  NAND _129_ (
+    .A(_046_),
+    .B(_059_),
     .Y(_071_)
   );
-  NAND _133_ (
-    .A(_046_),
-    .B(_070_),
+  NAND _130_ (
+    .A(contadorP1[2]),
+    .B(_071_),
     .Y(_072_)
   );
-  NOR _134_ (
-    .A(_071_),
+  NOR _131_ (
+    .A(_034_),
     .B(_072_),
-    .Y(_000_[0])
+    .Y(_001_[2])
   );
-  NAND _135_ (
-    .A(_023_),
-    .B(_070_),
+  NAND _132_ (
+    .A(_045_),
+    .B(_060_),
+    .Y(_073_)
+  );
+  NAND _133_ (
+    .A(contadorP3[0]),
+    .B(_067_),
+    .Y(_074_)
+  );
+  NAND _134_ (
+    .A(_073_),
+    .B(_074_),
+    .Y(_075_)
+  );
+  NOR _135_ (
+    .A(_042_),
+    .B(_058_),
+    .Y(_076_)
+  );
+  NOR _136_ (
+    .A(contadorP3[0]),
+    .B(_076_),
+    .Y(_077_)
+  );
+  NAND _137_ (
+    .A(reset),
+    .B(_075_),
+    .Y(_078_)
+  );
+  NOR _138_ (
+    .A(_077_),
+    .B(_078_),
+    .Y(_003_[0])
+  );
+  NOR _139_ (
+    .A(_058_),
+    .B(_067_),
+    .Y(_079_)
+  );
+  NOT _140_ (
+    .A(_079_),
+    .Y(_080_)
+  );
+  NAND _141_ (
+    .A(contadorP3[1]),
+    .B(reset),
+    .Y(_081_)
+  );
+  NOR _142_ (
+    .A(_079_),
+    .B(_081_),
+    .Y(_003_[1])
+  );
+  NAND _143_ (
+    .A(contadorP3[2]),
+    .B(reset),
+    .Y(_082_)
+  );
+  NOR _144_ (
+    .A(_079_),
+    .B(_082_),
+    .Y(_003_[2])
+  );
+  NAND _145_ (
+    .A(contadorP2[0]),
+    .B(_058_),
+    .Y(_083_)
+  );
+  NOR _146_ (
+    .A(_067_),
+    .B(_083_),
+    .Y(_084_)
+  );
+  NOT _147_ (
+    .A(_084_),
     .Y(_004_)
   );
-  NAND _136_ (
-    .A(_046_),
+  NAND _148_ (
+    .A(_069_),
     .B(_004_),
     .Y(_005_)
   );
-  NOR _137_ (
-    .A(_023_),
-    .B(_070_),
+  NAND _149_ (
+    .A(reset),
+    .B(_058_),
     .Y(_006_)
   );
-  NAND _138_ (
-    .A(contadorpeso0[0]),
-    .B(contadorpeso0[1]),
+  NOR _150_ (
+    .A(_067_),
+    .B(_006_),
+    .Y(pop[2])
+  );
+  NAND _151_ (
+    .A(contadorP2[0]),
+    .B(reset),
     .Y(_007_)
   );
-  NOR _139_ (
-    .A(_037_),
-    .B(_007_),
+  NOT _152_ (
+    .A(_007_),
     .Y(_008_)
   );
-  NOR _140_ (
-    .A(_005_),
-    .B(_006_),
-    .Y(_000_[1])
-  );
-  NOR _141_ (
-    .A(contadorpeso0[2]),
+  NOR _153_ (
+    .A(pop[2]),
     .B(_008_),
     .Y(_009_)
   );
-  NOR _142_ (
-    .A(_047_),
+  NOR _154_ (
+    .A(_005_),
     .B(_009_),
-    .Y(_000_[2])
+    .Y(_002_[0])
   );
-  NAND _143_ (
-    .A(_023_),
-    .B(contadorpeso0[2]),
+  NOR _155_ (
+    .A(_055_),
+    .B(_067_),
     .Y(_010_)
   );
-  NOR _144_ (
-    .A(contadorpeso0[0]),
+  NOR _156_ (
+    .A(_029_),
     .B(_010_),
     .Y(_011_)
   );
-  NAND _145_ (
-    .A(reset),
-    .B(_036_),
+  NOR _157_ (
+    .A(_084_),
+    .B(_011_),
     .Y(_012_)
   );
-  NOR _146_ (
-    .A(_011_),
+  NOR _158_ (
+    .A(_034_),
     .B(_012_),
-    .Y(pop[0])
+    .Y(_002_[1])
   );
-  NAND _147_ (
-    .A(_026_),
-    .B(_011_),
+  NAND _159_ (
+    .A(contadorP2[2]),
+    .B(reset),
     .Y(_013_)
   );
-  NOR _148_ (
-    .A(_012_),
+  NOR _160_ (
+    .A(_010_),
     .B(_013_),
-    .Y(pop[1])
+    .Y(_002_[2])
   );
-  NOR _149_ (
-    .A(contadorpeso2[0]),
-    .B(_041_),
+  NAND _161_ (
+    .A(_043_),
+    .B(_044_),
     .Y(_014_)
   );
-  NAND _150_ (
-    .A(_019_),
-    .B(_040_),
+  NOT _162_ (
+    .A(_014_),
     .Y(_015_)
   );
-  NAND _151_ (
-    .A(_025_),
-    .B(_015_),
+  NAND _163_ (
+    .A(_031_),
+    .B(_014_),
     .Y(_016_)
   );
-  NOR _152_ (
-    .A(_012_),
-    .B(_016_),
-    .Y(pop[2])
-  );
-  NAND _153_ (
-    .A(contadorpeso3[0]),
-    .B(_043_),
+  NOR _164_ (
+    .A(_031_),
+    .B(_014_),
     .Y(_017_)
   );
-  NAND _154_ (
-    .A(_014_),
-    .B(_017_),
+  NAND _165_ (
+    .A(contadorP0[0]),
+    .B(_015_),
     .Y(_018_)
   );
-  NOR _155_ (
-    .A(_012_),
+  NAND _166_ (
+    .A(_016_),
     .B(_018_),
+    .Y(_019_)
+  );
+  NOR _167_ (
+    .A(_070_),
+    .B(_019_),
+    .Y(_000_[0])
+  );
+  NOR _168_ (
+    .A(_032_),
+    .B(_018_),
+    .Y(_020_)
+  );
+  NAND _169_ (
+    .A(contadorP0[1]),
+    .B(_017_),
+    .Y(_021_)
+  );
+  NAND _170_ (
+    .A(_032_),
+    .B(_018_),
+    .Y(_022_)
+  );
+  NAND _171_ (
+    .A(_021_),
+    .B(_022_),
+    .Y(_023_)
+  );
+  NOR _172_ (
+    .A(_070_),
+    .B(_023_),
+    .Y(_000_[1])
+  );
+  NOR _173_ (
+    .A(_042_),
+    .B(_066_),
+    .Y(_024_)
+  );
+  NOR _174_ (
+    .A(_033_),
+    .B(_024_),
+    .Y(_025_)
+  );
+  NOR _175_ (
+    .A(_020_),
+    .B(_025_),
+    .Y(_026_)
+  );
+  NOR _176_ (
+    .A(_034_),
+    .B(_026_),
+    .Y(_000_[2])
+  );
+  NOR _177_ (
+    .A(_034_),
+    .B(_014_),
+    .Y(pop[0])
+  );
+  NAND _178_ (
+    .A(reset),
+    .B(_048_),
+    .Y(_027_)
+  );
+  NOT _179_ (
+    .A(_027_),
+    .Y(pop[1])
+  );
+  NAND _180_ (
+    .A(reset),
+    .B(_055_),
+    .Y(_028_)
+  );
+  NOR _181_ (
+    .A(_080_),
+    .B(_028_),
     .Y(pop[3])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _156_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _182_ (
     .C(clk),
     .D(_000_[0]),
-    .Q(contadorpeso0[0])
+    .Q(contadorP0[0])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _157_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _183_ (
     .C(clk),
     .D(_000_[1]),
-    .Q(contadorpeso0[1])
+    .Q(contadorP0[1])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _158_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _184_ (
     .C(clk),
     .D(_000_[2]),
-    .Q(contadorpeso0[2])
+    .Q(contadorP0[2])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _159_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _185_ (
     .C(clk),
     .D(_001_[0]),
-    .Q(contadorpeso1[0])
+    .Q(contadorP1[0])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _160_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _186_ (
     .C(clk),
     .D(_001_[1]),
-    .Q(contadorpeso1[1])
+    .Q(contadorP1[1])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _161_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _187_ (
     .C(clk),
     .D(_001_[2]),
-    .Q(contadorpeso1[2])
+    .Q(contadorP1[2])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _162_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _188_ (
     .C(clk),
     .D(_002_[0]),
-    .Q(contadorpeso2[0])
+    .Q(contadorP2[0])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _163_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _189_ (
     .C(clk),
     .D(_002_[1]),
-    .Q(contadorpeso2[1])
+    .Q(contadorP2[1])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _164_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _190_ (
     .C(clk),
     .D(_002_[2]),
-    .Q(contadorpeso2[2])
+    .Q(contadorP2[2])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _165_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _191_ (
     .C(clk),
     .D(_003_[0]),
-    .Q(contadorpeso3[0])
+    .Q(contadorP3[0])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _166_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _192_ (
     .C(clk),
-    .D(1'h0),
-    .Q(contadorpeso3[1])
+    .D(_003_[1]),
+    .Q(contadorP3[1])
   );
-  (* src = "arbitro1Synth.v:36" *)
-  DFF _167_ (
+  (* src = "arbitro1Synth.v:40" *)
+  DFF _193_ (
     .C(clk),
-    .D(1'h0),
-    .Q(contadorpeso3[2])
+    .D(_003_[2]),
+    .Q(contadorP3[2])
   );
-  assign _003_[2:1] = 2'h0;
   assign push = pop;
 endmodule
