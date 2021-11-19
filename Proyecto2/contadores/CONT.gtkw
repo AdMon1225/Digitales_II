@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Nov 19 04:20:59 2021
+[*]
+[dumpfile] "/home/tessa/Documents/Contador/COUNTERS.vcd"
+[dumpfile_mtime] "Fri Nov 19 04:19:08 2021"
+[dumpfile_size] 40419
+[savefile] "/home/tessa/Documents/Contador/CONT.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] 459 -39
+*-12.273617 32620 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 233
+[signals_width] 229
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@28
+testbench_counter.clk
+testbench_counter.reset_L
+testbench_counter.req
+testbench_counter.IDLE
+testbench_counter.valid
+testbench_counter.valid_sint
+testbench_counter.fifo0_pop
+testbench_counter.fifo1_pop
+testbench_counter.fifo2_pop
+testbench_counter.fifo3_pop
+testbench_counter.fifo4_pop
+testbench_counter.idx[2:0]
+@22
+testbench_counter.data_out[4:0]
+testbench_counter.data_out_sint[4:0]
+[pattern_trace] 1
+[pattern_trace] 0
