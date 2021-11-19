@@ -30,8 +30,8 @@ module testbench_counter;
 
 	counter_sint count_E(/*AUTOINST*/
 			     // Outputs
-			     .data_out_sint   	(data_out_sint[4:0]),
-			     .valid_sint     	(valid_sint),
+			     .data_out_sint	(data_out_sint[4:0]),
+			     .valid_sint	(valid_sint),
 			     // Inputs
 			     .IDLE		(IDLE),
 			     .clk		(clk),
@@ -43,7 +43,6 @@ module testbench_counter;
 			     .idx		(idx[2:0]),
 			     .req		(req),
 			     .reset_L		(reset_L));
-
 
 
     tester_counter prob(/*AUTOINST*/
@@ -60,8 +59,7 @@ module testbench_counter;
 			.fifo4_pop	(fifo4_pop),
 			// Inputs
 			.valid		(valid),
-			.data_out_sint  (data_out_sint[4:0]),
-			.data_out	(data_out[4:0]));
-	                
+			.data_out	(data_out[4:0]),
+			.data_out_sint	(data_out_sint[4:0]));
 		
 endmodule

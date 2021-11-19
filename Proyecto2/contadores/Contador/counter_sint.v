@@ -13,7 +13,7 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   wire [4:0] _003_;
   (* src = "counter_sint.v:36" *)
   wire [4:0] _004_;
-  (* src = "counter_sint.v:83" *)
+  (* src = "counter_sint.v:84" *)
   wire [4:0] _005_;
   (* src = "counter_sint.v:36" *)
   wire _006_;
@@ -377,9 +377,9 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   wire _288_;
   wire _289_;
   wire _290_;
-  (* src = "counter_sint.v:102|counter_cond.v:89|<techmap.v>:432" *)
+  (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:432" *)
   wire [24:0] _291_;
-  (* src = "counter_sint.v:102|counter_cond.v:89|<techmap.v>:428" *)
+  (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:428" *)
   wire [4:0] _292_;
   wire _293_;
   wire _294_;
@@ -406,7 +406,7 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   (* src = "counter_sint.v:72|counter_cond.v:52|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "4" *)
   wire [31:0] _307_;
-  (* src = "counter_sint.v:102|counter_cond.v:89|<techmap.v>:445" *)
+  (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:445" *)
   wire _308_;
   (* src = "counter_sint.v:52|<techmap.v>:260|<techmap.v>:222" *)
   wire _309_;
@@ -422,19 +422,14 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   input IDLE;
   (* src = "counter_sint.v:5" *)
   input clk;
-  (* init = 5'h00 *)
   (* src = "counter_sint.v:28" *)
   wire [4:0] counter0;
-  (* init = 5'h00 *)
   (* src = "counter_sint.v:29" *)
   wire [4:0] counter1;
-  (* init = 5'h00 *)
   (* src = "counter_sint.v:30" *)
   wire [4:0] counter2;
-  (* init = 5'h00 *)
   (* src = "counter_sint.v:31" *)
   wire [4:0] counter3;
-  (* init = 5'h00 *)
   (* src = "counter_sint.v:32" *)
   wire [4:0] counter4;
   (* src = "counter_sint.v:22" *)

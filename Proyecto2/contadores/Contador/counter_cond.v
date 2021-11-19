@@ -25,11 +25,11 @@ module counter_cond
 
 
     // creamos los counters
-    reg [4:0] counter0 = 5'b00000;
-    reg [4:0] counter1 = 5'b00000;
-    reg [4:0] counter2 = 5'b00000;
-    reg [4:0] counter3 = 5'b00000;
-    reg [4:0] counter4 = 5'b00000;
+    reg [4:0] counter0;
+    reg [4:0] counter1;
+    reg [4:0] counter2;
+    reg [4:0] counter3;
+    reg [4:0] counter4;
 
 
 
@@ -73,6 +73,7 @@ module counter_cond
 
             end
 
+
         end   
 
 
@@ -81,33 +82,44 @@ module counter_cond
 
 
     always @(*) begin
-	    valid= 0;
-	    data_out= 4'b0000;
+
+        valid= 0;
+	    data_out= 5'b00000;
 	    
         // se pasan los counter a la salida
         if (IDLE && req)begin
             case (idx)
-                3'b000: begin
+
+                3'b000: 
+                begin
                     data_out = counter0;
                 end
-                3'b001: begin
+
+                3'b001: 
+                begin
                     data_out = counter1;
                 end
-                3'b010: begin
+
+                3'b010: 
+                begin
                     data_out = counter2;
                 end
-                3'b011: begin
+
+                3'b011: 
+                begin
                     data_out = counter3;
                 end
-                3'b100: begin
+
+                3'b100: 
+                begin
                     data_out = counter4;
                 end
+
             endcase
 
             valid = 1;
 
         end
-
 
         else begin
 
@@ -115,6 +127,7 @@ module counter_cond
             data_out = 0;
 
         end
+
 
 
     end
