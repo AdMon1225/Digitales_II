@@ -8,7 +8,7 @@
 `include "counter_cond.v"
 
 module QoS(
-    input clk, push, //Push es del FIFO solito amarillo
+    input clk,
     input [11:0] data_in, //Data_in que le ingresa al FIFO solito amarillo
     input popBP0, popBP1, popBP2, popBP3, //Pops de entrada que da probador hacia los 4 FIFOs azules
 
@@ -36,7 +36,7 @@ module QoS(
     wire [11:0] muxout,
     wire [11:0] fifo_outBSolo, //Salida del FIFO azul solito.
     wire [11:0] demux2outP0, demux2outP1, demux2outP2, demux2outP3, //Salidas del DEMUX2
-    wire IDLE,
+    wire idle, active,
 
     wire [3:0] pushA1, //Push para los 4 FIFOs azules. Arbitro1 
     wire [3:0] popA1, //Pop para los 4 FIFOs amarillos. Arbitro1
@@ -48,6 +48,8 @@ module QoS(
     wire popA2, //Pop para el FIFO amarillo solito. Arbitro2
     wire [3:0] almost_fullA2, //Almost full de los 4 FIFOs amarillos
     wire emptyA2, //Empty del FIFO amarillo solito
+
+	wire emptyAUX0, emptyAUX1, emptyAUX2, emptyAUX3, emptyAUXSolo, //Empties que solo se utilizan para la FSM.
 
 
     wire [3:0] umbralH, umbralL,
@@ -67,7 +69,7 @@ module QoS(
 		       .empty_umbral	(umbralL[3:0]),
 		       .clk		(clk),
 		       .reset		(reset),
-		       .fifo_wr		(push),
+		       .fifo_wr		(active),
 		       .fifo_rd		(popA2);
 
     fifoMod FIFOYP0 (/*AUTOINST*/
@@ -139,7 +141,7 @@ module QoS(
 		       .almost_full	(0),
 		       .almost_empty	(0),
 		       .full		(0),
-		       .empty		(0),
+		       .empty		(emptyAUXSolo),
 		       .fifo_out	(fifo_outBSolo[11:0]),
 		       // Inputs
 		       .fifo_in		(muxout[11:0]),
@@ -147,15 +149,15 @@ module QoS(
 		       .empty_umbral	(umbralL[3:0]),
 		       .clk		(clk),
 		       .reset		(reset),
-		       .fifo_wr		(1),
-		       .fifo_rd		(1));
+		       .fifo_wr		(active),
+		       .fifo_rd		(active));
 
     fifoMod FIFOBP0 (/*AUTOINST*/
 		     // Outputs
 		     .almost_full	(almost_fullA1[0]),
 		     .almost_empty	(0),
 		     .full		(0),
-		     .empty		(0),
+		     .empty		(emptyAUX0),
 		     .fifo_out		(fifo_dataout0[11:0]),
 		     // Inputs
 		     .fifo_in		(demux2outP0[11:0]),
@@ -171,7 +173,7 @@ module QoS(
 		     .almost_full	(almost_fullA1[1]),
 		     .almost_empty	(0),
 		     .full		(0),
-		     .empty		(0),
+		     .empty		(emptyAUX1),
 		     .fifo_out		(fifo_dataout1[11:0]),
 		     // Inputs
 		     .fifo_in		(demux2outP1[11:0]),
@@ -187,7 +189,7 @@ module QoS(
 		     .almost_full	(almost_fullA1[2]),
 		     .almost_empty	(0),
 		     .full		(0),
-		     .empty		(0),
+		     .empty		(emptyAUX2),
 		     .fifo_out		(fifo_dataout2[11:0]),
 		     // Inputs
 		     .fifo_in		(demux2outP2[11:0]),
@@ -203,7 +205,7 @@ module QoS(
 		     .almost_full	(almost_fullA1[3]),
 		     .almost_empty	(0),
 		     .full		(0),
-		     .empty		(0),
+		     .empty		(emptyAUX3),
 		     .fifo_out		(fifo_dataout3[11:0]),
 		     // Inputs
 		     .fifo_in		(demux2outP3[11:0]),
@@ -286,14 +288,14 @@ module QoS(
         // Inputs
         .clk  (clk),
         .req  (req),
-        .IDLE  (IDLE),
+        .IDLE  (idle),
         .reset_L  (reset),
         .idx  (idx[2:0]),
         .fifo0_pop  (popBP0),
         .fifo1_pop  (popBP1),
         .fifo2_pop  (popBP2),
         .fifo3_pop  (popBP3),
-        .fifo4_pop  (popA2));
+        .fifo4_pop  (active));
 
 
 
@@ -301,26 +303,25 @@ module QoS(
 
     FSM FSM (/*AUTOINST*/
 	     // Outputs
-	     .active_out		(active_out),
-	     .idle_out			(idle_out),
-	     .umbral_OUT_L		(umbral_OUT_L[2:0]),
-	     .umbral_OUT_H		(umbral_OUT_H[2:0]),
+	     .ACTIVE_OUT		(active),
+	     .IDLE_OUT			(idle),
+	     .umbral_out_L		(umbralL[3:0]),
+	     .umbral_out_H		(umbralH[3:0]),
 	     // Inputs
 	     .clk			(clk),
 	     .init			(init),
-	     .reset_L			(reset_L),
-	     .umbral_IN_L		(umbral_IN_L[2:0]),
-	     .umbral_IN_H		(umbral_IN_H[2:0]),
-	     .emp_I0			(emp_I0),
-	     .emp_I1			(emp_I1),
-	     .emp_I2			(emp_I2),
-	     .emp_I3			(emp_I3),
-	     .emp_O0			(emp_O0),
-	     .emp_O1			(emp_O1),
-	     .emp_O2			(emp_O2),
-	     .emp_O3			(emp_O3));
+	     .reset			(reset),
+	     .umbral_interno_L		(umbralLow[3:0]),
+	     .umbral_interno_H		(umbralHigh[3:0]),
+	     .empties0			(emptyA2),
+	     .empties1			(emptyA1[0]),
+	     .empties2			(emptyA1[1]),
+	     .empties3			(emptyA1[2]),
+	     .empties4			(emptyA1[3]),
+	     .empties5			(emptyAUXSolo),
+	     .empties6			(emptyAUX0),
+	     .empties7			(emptyAUX1)
+		 .empties8			(emptyAUX2)
+		 .empties9			(emptyAUX3));
 
 endmodule 
-
-
-

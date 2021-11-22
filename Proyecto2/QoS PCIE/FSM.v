@@ -1,121 +1,134 @@
-module FSM
-   (//Input   
+module FSM(
     input clk,
     input init,
-    input reset_L,
-    input [2:0] umbral_IN_L,
-    input [2:0] umbral_IN_H,
-	input emp_I0,
-    input emp_I1,
-    input emp_I2,
-    input emp_I3,
-    input emp_O0,
-    input emp_O1,
-    input emp_O2,
-    input emp_O3,
-    //Output
-    output reg active_out,
-    output reg idle_out,
-    output reg [2:0] umbral_OUT_L,
-    output reg [2:0] umbral_OUT_H
-    );
+    input reset,
+	input empties0,
+    input empties1,
+    input empties2,
+    input empties3,
+    input empties4,
+    input empties5,
+    input empties6,
+    input empties7,
+    input empties8,
+    input empties9,
+    input [3:0] umbral_interno_L,
+    input [3:0] umbral_interno_H,
+    output reg IDLE_OUT,
+    output reg ACTIVE_OUT,
+    output reg [3:0] umbral_out_L,
+    output reg [3:0] umbral_out_H);
 
 parameter RESET = 0;
 parameter INIT = 1;
 parameter IDLE = 2;
 parameter ACTIVE = 3;
 
-reg [1:0] estado;
-reg [1:0] estado_prox;
-
-reg [2:0] umbral_0 = 3'b000;
-reg [2:0] umbral_1 = 3'b000;
-/*
-wire [2:0] umbral_0;
-wire [2:0] umbral_1;
-*/
-reg [7:0] empty;
+reg [9:0] empty;
+reg [1:0] state;
+reg [1:0] next_state;
+reg [3:0] umbral0 = 0;
+reg [3:0] umbral1 = 0;
 
 
 always @(posedge clk) begin
+   
     if(!reset_L) begin
-        estado <= RESET;
+        state <= RESET;
     end
+   
     else begin 
         if (init) begin
-        estado <= INIT;
+        state <= INIT;
         end
+
         else begin
-            estado <= estado_prox;
+            state <= next_state;
         end
     end
-    umbral_0 = umbral_IN_L;
-    umbral_1 = umbral_IN_H;
+
+    umbral0 = umbral_interno_L;
+    umbral1 = umbral_interno_H;
+
 end
+
 
 always @(*) begin
-    empty[0] = emp_I0;
-    empty[1] = emp_I1;
-    empty[2] = emp_I2;
-    empty[3] = emp_I3;
-    empty[4] = emp_O0;
-    empty[5] = emp_O1;
-    empty[6] = emp_O2;
-    empty[7] = emp_O3;
+    empty[0] = empties0;
+    empty[1] = empties1;
+    empty[2] = empties2;
+    empty[3] = empties3;
+    empty[4] = empties4;
+    empty[5] = empties5;
+    empty[6] = empties6;
+    empty[7] = empties7;
+    empty[8] = empties8;
+    empty[9] = empties9;
 
-    case (estado)
+    case (state)
+
         RESET: begin
-            idle_out = 0;
-            active_out = 0;
-            umbral_OUT_L = 0;
-            umbral_OUT_H = 0;
-            estado_prox = INIT;
+            IDLE_OUT = 0;
+            ACTIVE_OUT = 0;
+            umbral_out_L = 0;
+            umbral_out_H = 0;
+            next_state = INIT;
         end
+
+
         INIT: begin
-            idle_out = 0;
-            active_out = 0;
-            umbral_OUT_L = umbral_IN_L;
-            umbral_OUT_H = umbral_IN_H;
+            IDLE_OUT = 0;
+            ACTIVE_OUT = 0;
+            umbral_out_L = umbral_interno_L;
+            umbral_out_H = umbral_interno_H;
+            
             if(init) begin
-                estado_prox = INIT;
+                next_state = INIT;
             end
+            
             else begin
-                estado_prox = IDLE;
+                next_state = IDLE;
             end
         end
+
+
         IDLE: begin
-            idle_out = 1;
-            active_out = 0;
-            umbral_OUT_L = umbral_0;
-            umbral_OUT_H = umbral_1;
-            if(empty == 'hFF) begin
-                estado_prox = IDLE;
+            IDLE_OUT = 1;
+            ACTIVE_OUT = 0;
+            umbral_out_L = umbral0;
+            umbral_out_H = umbral1;
+           
+           if(empty == 'b1111111111) begin
+                next_state = IDLE;
             end
+
             else begin
-                estado_prox = ACTIVE;
+                next_state = ACTIVE;
             end
         end
+
+
         ACTIVE: begin
-            idle_out = 0;
-            active_out = 1;
-            umbral_OUT_L = umbral_0;
-            umbral_OUT_H = umbral_1;
-            //estado_prox = ACTIVE;
-            if(empty == 'hFF) begin
-                estado_prox = IDLE;
-            end
-            else begin
-                estado_prox = ACTIVE;
-            end
-        end
-        default: begin
-            estado_prox = INIT;
-        end
     
+            IDLE_OUT = 0;
+            ACTIVE_OUT = 1;
+            umbral_out_L = umbral0;
+            umbral_out_H = umbral1;
+         
+
+            if(empty == 'b1111111111) begin
+                next_state = IDLE;
+            end
+
+            else begin
+                next_state = ACTIVE;
+            end
+        end
+        
+
+        default: begin
+            next_state = INIT;
+        end
     endcase
-
-
-
 end
-
 endmodule
