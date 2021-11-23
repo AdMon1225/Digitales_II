@@ -1,10 +1,10 @@
-module mux
+module mux(
     output reg [11:0] mux_out,
     input [11:0] fifo_out_0,
     input [11:0] fifo_out_1,
     input [11:0] fifo_out_2,
     input [11:0] fifo_out_3,
-    input [3:0] pop;
+    input [3:0] pop);
 
     // dependiendo del pop recibido pasa fifo a la salida
     always @(*)begin

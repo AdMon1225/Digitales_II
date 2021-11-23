@@ -10,9 +10,9 @@ module control(
             contador <= 0;
         end
         else if (fifo_wr == 1) begin
-            contador <= contador + 1;
+            contador = contador + 1;
             if (fifo_rd == 1) begin
-                contador <= contador - 1;
+                contador = contador - 1;
             end
         end
         else if (fifo_wr == 0) begin

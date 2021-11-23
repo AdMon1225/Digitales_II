@@ -1,10 +1,10 @@
 module probador (
-    output reg clk, push, //Push es del FIFO solito amarillo
+    output reg clk,
     output reg [11:0] data_in, //Data_in que le ingresa al FIFO solito amarillo
     output reg popBP0, popBP1, popBP2, popBP3, //Pops de entrada que da probador hacia los 4 FIFOs azules
 
     // Contadores
-    output reg req, 
+    output reg req, push,
     output reg [2:0] idx,
     input valid, 
     input [4:0] data,
@@ -25,8 +25,8 @@ module probador (
         $dumpfile("verificacion.vcd");
         $dumpvars;
 
-        push <= 0;
         data_in <= 0;
+        push <= 0;
         popBP0 <= 0;
         popBP1 <= 0;
         popBP2 <= 0;
@@ -41,24 +41,55 @@ module probador (
         @(posedge clk);
         @(posedge clk);
         @(posedge clk);
+
         @(posedge clk);
         reset <= 1;
 
+        @(posedge clk);
+        init <= 1;
+        umbralHigh <= 3;
+        umbralLow <= 1;
+
+        @(posedge clk);
+        init <= 0;
+
+        @(posedge clk);
+        @(posedge clk);
+
+        @(posedge clk);
+        data_in <= 'h37D;
+        push <= 1;
+
+        @(posedge clk);
+        data_in <= 'hF04;
+
+        @(posedge clk);
+        data_in <= 'hE95;
+
+        @(posedge clk);
+        data_in <= 'hAAE;
+
+        @(posedge clk);
+        data_in <= 'hB5A;
+
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
 
 
+        @(posedge clk);
+        popBP0 <= 1;
+        popBP1 <= 1;
+        popBP2 <= 1;
+        popBP3 <= 1;
 
-
-
-
-
-
-
-
-
-
-
-
-
+        #20 $finish;
 
     end 
 endmodule

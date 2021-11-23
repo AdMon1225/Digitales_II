@@ -33,7 +33,7 @@ reg [3:0] umbral1 = 0;
 
 always @(posedge clk) begin
    
-    if(!reset_L) begin
+    if(!reset) begin
         state <= RESET;
     end
    
