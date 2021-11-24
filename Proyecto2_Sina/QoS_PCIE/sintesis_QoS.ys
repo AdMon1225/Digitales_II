@@ -1,0 +1,7 @@
+read_verilog QoS.v
+hierarchy -check -top QoS
+proc; opt; fsm; opt; memory; opt;
+techmap; opt
+dfflibmap -liberty cmos_cells.lib
+abc -liberty cmos_cells.lib
+write_verilog QoS_sint.v
