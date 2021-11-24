@@ -4,8 +4,15 @@ module demux2 (
 
 always @(*) begin
     if (demuxin[9:8] == 2'b00) demuxout0 = demuxin;
-    else if (demuxin[9:8] == 2'b01) demuxout1 = demuxin;
-    else if (demuxin[9:8] == 2'b10) demuxout2 = demuxin;
-    else if (demuxin[9:8] == 2'b11) demuxout3 = demuxin;
+    else demuxout0 = 0;
+
+    if (demuxin[9:8] == 2'b01) demuxout1 = demuxin;
+    else demuxout1 = 0;
+
+    if (demuxin[9:8] == 2'b10) demuxout2 = demuxin;
+    else demuxout2 = 0;
+
+    if (demuxin[9:8] == 2'b11) demuxout3 = demuxin;
+    else demuxout3 = 0;
 end
 endmodule

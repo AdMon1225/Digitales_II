@@ -42,20 +42,25 @@ module probador (
         @(posedge clk);
         @(posedge clk);
 
+        //Prueba 1
         @(posedge clk);
         reset <= 1;
+        init <= 1;
+
+        //Prueba 2
+        @(posedge clk);
+        umbralHigh <= 5;
+        umbralLow <= 1;
 
         @(posedge clk);
-        init <= 1;
-        umbralHigh <= 3;
+        umbralHigh <= 6;
         umbralLow <= 1;
 
         @(posedge clk);
         init <= 0;
 
         @(posedge clk);
-        @(posedge clk);
-
+        
         @(posedge clk);
         data_in <= 'h37D;
         push <= 1;
@@ -73,6 +78,8 @@ module probador (
         data_in <= 'hB5A;
 
         @(posedge clk);
+        data_in <= 0;
+
         @(posedge clk);
         @(posedge clk);
         @(posedge clk);
