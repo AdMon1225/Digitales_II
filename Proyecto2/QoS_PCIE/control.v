@@ -22,6 +22,7 @@ module control(
         end
     end
 
+    //Umbrales son para marcar almost_full y almost_empty
     always @(*) begin
         full = 0; //Evitamos latches con valores default
         empty = 0;

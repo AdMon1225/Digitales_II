@@ -151,8 +151,8 @@ module QoS(
 		       .empty_umbral	(umbralL[3:0]),
 		       .clk		(clk),
 		       .reset		(reset),
-		       .fifo_wr		(active),
-		       .fifo_rd		(active));
+		       .fifo_wr		(active_out),
+		       .fifo_rd		(active_out));
 
     fifoMod FIFOBP0 (/*AUTOINST*/
 		     // Outputs

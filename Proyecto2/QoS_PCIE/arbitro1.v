@@ -7,7 +7,6 @@ module arbitro1(
     output reg [3:0] push);
     
     reg [2:0] contadorP0, contadorP1, contadorP2, contadorP3;
-    integer i;
 
     always @(*) begin
         pop = 0;
@@ -66,7 +65,7 @@ module arbitro1(
     
     always @(*) begin
         push = 0;
-        if (demuxin != 0 && almost_fullFIFO != 'hFFF) begin
+        if (demuxin != 0 && almost_fullFIFO == 0) begin
             if (demuxin[9:8] == 'b00) push[0] = 1;
             else push[0] = 0;
 
@@ -78,6 +77,9 @@ module arbitro1(
 
             if (demuxin[9:8] == 'b11) push[3] = 1;
             else push[3] = 0;
-        end   
+        end 
+        else begin
+            push = 0;
+        end  
     end 
 endmodule 

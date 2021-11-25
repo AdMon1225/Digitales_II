@@ -23,4 +23,3 @@ run:
 	iverilog testbench.v -o QOSsignals
 	vvp QOSsignals
 	gtkwave QOS.vcd
-	rm QOSsignals

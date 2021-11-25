@@ -1,10 +1,10 @@
-module probador (
-    output reg clk,
+module probador(
+    output reg clk, push,
     output reg [11:0] data_in, //Data_in que le ingresa al FIFO solito amarillo
     output reg popBP0, popBP1, popBP2, popBP3, //Pops de entrada que da probador hacia los 4 FIFOs azules
 
     // Contadores
-    output reg req, push,
+    output reg req, 
     output reg [2:0] idx,
     input valid, valid_sint,
     input [4:0] data, data_sint,
@@ -22,7 +22,7 @@ module probador (
     always #1 clk <= ~clk; 
 
     initial begin
-        $dumpfile("verificacion.vcd");
+        $dumpfile("QOS.vcd");
         $dumpvars;
 
         data_in <= 0;
@@ -40,63 +40,96 @@ module probador (
 
         @(posedge clk);
         @(posedge clk);
-        @(posedge clk);
 
         //Prueba 1
         @(posedge clk);
         reset <= 1;
-        init <= 1;
+        
+        @(posedge clk);
+        init <= 1; //Se cumple prueba 1. 
 
         //Prueba 2
         @(posedge clk);
+        umbralHigh <= 7;
+        umbralLow <= 2;
+
+        @(posedge clk);
         umbralHigh <= 5;
-        umbralLow <= 1;
+        umbralLow <= 1; 
 
         @(posedge clk);
-        umbralHigh <= 6;
-        umbralLow <= 1;
-
-        @(posedge clk);
-        init <= 0;
-
-        @(posedge clk);
+        init <= 0; //Se cumple prueba 2.
         
+
+        //Prueba 3. 
         @(posedge clk);
-        data_in <= 'h37D;
+        data_in <= 'h0FF; //Desde aca, se mandan 4 palabras hacia el FIFO azul P0
         push <= 1;
 
         @(posedge clk);
-        data_in <= 'hF04;
+        data_in <= 'h404;
 
         @(posedge clk);
-        data_in <= 'hE95;
+        data_in <= 'h895;
 
         @(posedge clk);
-        data_in <= 'hAAE;
+        data_in <= 'hCAE; 
+
+        @(posedge clk);
+        data_in <= 'h15A; //Desde aca, se mandan 4 palabras hacia el FIFO azul P1
+
+        @(posedge clk);
+        data_in <= 'h55A;
+
+        @(posedge clk);
+        data_in <= 'h95A;
+
+        @(posedge clk);
+        data_in <= 'hD5A;
+
+        @(posedge clk);
+        data_in <= 'h25A; //Desde aca, se mandan 4 palabras hacia el FIFO azul P2
+
+        @(posedge clk);
+        data_in <= 'h65A;
+
+        @(posedge clk);
+        data_in <= 'hA5A;
+
+        @(posedge clk);
+        data_in <= 'hE5A;
+
+        @(posedge clk);
+        data_in <= 'h35A; //Desde aca, se mandan 4 palabras hacia el FIFO azul P3
+
+        @(posedge clk);
+        data_in <= 'h75A;
 
         @(posedge clk);
         data_in <= 'hB5A;
 
         @(posedge clk);
-        data_in <= 0;
+        data_in <= 'hF5A;
 
         @(posedge clk);
-        @(posedge clk);
-        @(posedge clk);
-        @(posedge clk);
-        @(posedge clk);
-        @(posedge clk);
-        @(posedge clk);
-        @(posedge clk);
-
+        data_in <= 'h0DC; //Provocamos un almost_full en FIFO azul P0
 
         @(posedge clk);
-        popBP0 <= 1;
-        popBP1 <= 1;
-        popBP2 <= 1;
-        popBP3 <= 1;
+        data_in <= 'h1AB; //Provocamos un almost_full en FIFO azul P1
 
-        #20 $finish;
+        @(posedge clk);
+        data_in <= 'h2FE; //Provocamos un almost_full en FIFO azul P2
+
+        @(posedge clk);
+        data_in <= 'h376; //Provocamos un almost_full en FIFO azul P3
+
+        @(posedge clk);
+        push <= 0;
+
+        repeat(20) begin
+            @(posedge clk);
+        end
+        $finish;
 
     end 
 endmodule
