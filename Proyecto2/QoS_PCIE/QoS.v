@@ -229,6 +229,7 @@ module QoS(
 		       // Inputs
 		       .reset		(reset),
 		       .clk		(clk),
+			   .active (active_out),
 			   .demuxin (fifo_outBSolo),
 		       .emptyFIFO	(emptyA1[3:0]),
 		       .almost_fullFIFO	(almost_fullA1[3:0]));
@@ -240,6 +241,7 @@ module QoS(
 		       // Inputs
 		       .reset		(reset),
 		       .clk		(clk),
+			   .active (active_out),
 		       .demuxin		(fifo_outYSolo[11:0]),
 		       .emptyFIFO	(emptyA2),
 		       .almost_fullFIFO	(almost_fullA2[3:0]));
