@@ -10,7 +10,7 @@ wire [11:0] data_in, fifo_dataout0, fifo_dataout1, fifo_dataout2, fifo_dataout3;
 wire [11:0] fifo_dataout0_sint, fifo_dataout1_sint, fifo_dataout2_sint, fifo_dataout3_sint;
 wire [3:0] umbralHigh, umbralLow;
 wire [2:0] idx;
-wire [4:0] data, data_sint;
+wire [7:0] data, data_sint;
 
 
 
@@ -18,7 +18,7 @@ wire [4:0] data, data_sint;
 QoS QoS (/*AUTOINST*/
 	 // Outputs
 	 .valid				(valid),
-	 .data				(data[4:0]),
+	 .data				(data[7:0]),
 	 .active_out			(active_out),
 	 .idle_out			(idle_out),
 	 .fifo_dataout0			(fifo_dataout0[11:0]),
@@ -45,7 +45,7 @@ QoS QoS (/*AUTOINST*/
 QoS_sint QoSEstr (/*AUTOINST*/
 	 // Outputs
 	 .valid_sint				(valid_sint),
-	 .data			(data_sint[4:0]),
+	 .data			(data_sint[7:0]),
 	 .active_out_sint			(active_out_sint),
 	 .idle_out_sint			(idle_out_sint),
 	 .fifo_dataout0_sint			(fifo_dataout0_sint[11:0]),
@@ -84,7 +84,7 @@ probador probador (/*AUTOINST*/
 		   .umbralLow		(umbralLow[3:0]),
 		   // Inputs
 		   .valid		(valid),
-		   .data		(data[4:0]),
+		   .data		(data[7:0]),
 		   .active_out		(active_out),
 		   .idle_out		(idle_out),
 		   .fifo_dataout0	(fifo_dataout0[11:0]),
@@ -92,7 +92,7 @@ probador probador (/*AUTOINST*/
 		   .fifo_dataout2	(fifo_dataout2[11:0]),
 		   .fifo_dataout3	(fifo_dataout3[11:0]),
 			.valid_sint		(valid_sint),
-		   .data_sint		(data_sint[4:0]),
+		   .data_sint		(data_sint[7:0]),
 		   .active_out_sint		(active_out_sint),
 		   .idle_out_sint		(idle_out_sint),
 		   .fifo_dataout0_sint	(fifo_dataout0_sint[11:0]),

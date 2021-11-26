@@ -584,7 +584,7 @@ module QoS_sint(clk, data_in, popBP0, popBP1, popBP2, popBP3, req, push, idx, va
   (* src = "QoS_sint.v:11" *)
   input clk;
   (* src = "QoS_sint.v:19" *)
-  output [4:0] data;
+  output [7:0] data;
   (* src = "QoS_sint.v:12" *)
   input [11:0] data_in;
   (* src = "QoS_sint.v:34" *)
@@ -2902,7 +2902,7 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   (* src = "counter_sint.v:36" *)
   wire [4:0] _004_;
   (* src = "counter_sint.v:84" *)
-  wire [4:0] _005_;
+  wire [7:0] _005_;
   (* src = "counter_sint.v:36" *)
   wire _006_;
   (* src = "counter_sint.v:36" *)
@@ -3267,9 +3267,9 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   wire _290_;
   wire _291_;
   (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:432" *)
-  wire [24:0] _292_;
+  wire [39:0] _292_;
   (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:428" *)
-  wire [4:0] _293_;
+  wire [7:0] _293_;
   wire _294_;
   wire _295_;
   wire _296_;
@@ -3322,7 +3322,7 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   (* src = "counter_sint.v:32" *)
   wire [4:0] counter4;
   (* src = "counter_sint.v:22" *)
-  output [4:0] data_out;
+  output [7:0] data_out;
   (* src = "counter_sint.v:13" *)
   input fifo0_pop;
   (* src = "counter_sint.v:14" *)
@@ -4548,6 +4548,7 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
     .D(_004_[4]),
     .Q(counter4[4])
   );
+  assign _005_[7:5] = 3'h0;
   assign _263_[31:6] = 26'h0000000;
   assign _264_[31:6] = 26'h0000000;
   assign _265_[31:6] = 26'h0000000;
@@ -4556,11 +4557,14 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   assign { _285_[2], _285_[0] } = { idx[2], idx[0] };
   assign _286_[1:0] = idx[1:0];
   assign _287_[2:1] = { idx[2], _285_[1] };
+  assign { _292_[39:37], _292_[31:29], _292_[23:21], _292_[15:13], _292_[7:5] } = 15'h0000;
+  assign _293_[7:5] = 3'h0;
   assign { _304_[31:4], _304_[0] } = { 27'h0000000, _263_[5], counter0[0] };
   assign { _305_[31:4], _305_[0] } = { 27'h0000000, _264_[5], counter1[0] };
   assign { _306_[31:4], _306_[0] } = { 27'h0000000, _265_[5], counter2[0] };
   assign { _307_[31:4], _307_[0] } = { 27'h0000000, _266_[5], counter3[0] };
   assign { _308_[31:4], _308_[0] } = { 27'h0000000, _267_[5], counter4[0] };
+  assign data_out[7:5] = 3'h0;
   assign _069_ = idx[2];
   assign _068_ = idx[1];
   assign _067_ = idx[0];

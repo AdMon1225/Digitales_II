@@ -19,7 +19,7 @@ module counter_cond
 
     // se regresa valid y un data out
     output reg valid,
-    output reg [4:0] data_out
+    output reg [7:0] data_out
     );
 
 

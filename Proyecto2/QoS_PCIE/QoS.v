@@ -16,7 +16,7 @@ module QoS(
     input req, push,
     input [2:0] idx,
     output valid, 
-    output [4:0] data,
+    output [7:0] data,
 
     // Maquina de Estados
     input reset, init, 

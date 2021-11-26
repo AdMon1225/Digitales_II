@@ -7,7 +7,7 @@ module probador(
     output reg req, 
     output reg [2:0] idx,
     input valid, valid_sint,
-    input [4:0] data, data_sint,
+    input [7:0] data, data_sint,
 
     // Maquina de Estados
     output reg reset, init, 
@@ -186,21 +186,158 @@ module probador(
         end
 
         @(posedge clk);
-        popBP3 <= 1; 
+        data_in <= 'h066; //Llenamos el FIFOYP0
+        push <= 1;
 
         @(posedge clk);
-        popBP3 <= 0; 
+        data_in <= 'h077;
 
-        repeat(12) begin
-            @(posedge clk); // Se cumple prueba 3. 
+        @(posedge clk);
+        data_in <= 'h088;
+
+        @(posedge clk);
+        data_in <= 'h099;
+
+        @(posedge clk);
+        data_in <= 'h0AA;
+
+        @(posedge clk);
+        data_in <= 0;
+        push <= 0;
+
+        @(posedge clk);
+
+        @(posedge clk);
+        popBP3 <= 1;
+
+        @(posedge clk);
+        popBP3 <= 0;
+
+        repeat(8) begin
+            @(posedge clk);
         end
 
-        
+        @(posedge clk);
+        data_in <= 'h466; //Llenamos el FIFOYP1
+        push <= 1;
+
+        @(posedge clk);
+        data_in <= 'h477;
+
+        @(posedge clk);
+        data_in <= 'h488;
+
+        @(posedge clk);
+        data_in <= 'h499;
+
+        @(posedge clk);
+        data_in <= 'h4AA;
+
+        @(posedge clk);
+        data_in <= 0;
+        push <= 0;
+
+        @(posedge clk);
+
+        @(posedge clk);
+        popBP0 <= 1;
+
+        @(posedge clk);
+        popBP0 <= 0;
+
+        repeat(8) begin
+            @(posedge clk);
+        end
+
+        @(posedge clk);
+        data_in <= 'h866; //Llenamos el FIFOYP2
+        push <= 1;
+
+        @(posedge clk);
+        data_in <= 'h877;
+
+        @(posedge clk);
+        data_in <= 'h888;
+
+        @(posedge clk);
+        data_in <= 'h899;
+
+        @(posedge clk);
+        data_in <= 'h8AA;
+
+        @(posedge clk);
+        data_in <= 0;
+        push <= 0;
+
+        @(posedge clk);
+
+        @(posedge clk);
+        popBP0 <= 1;
+
+        @(posedge clk);
+        popBP0 <= 0;
+
+        repeat(8) begin
+            @(posedge clk);
+        end
+
+        @(posedge clk);
+        data_in <= 'hC66; //Llenamos el FIFOYP3
+        push <= 1;
+
+        @(posedge clk);
+        data_in <= 'hC77;
+
+        @(posedge clk);
+        data_in <= 'hC88;
+
+        @(posedge clk);
+        data_in <= 'hC99;
+
+        @(posedge clk);
+        data_in <= 'hCAA;
+
+        @(posedge clk);
+        data_in <= 0;
+        push <= 0;
+
+        @(posedge clk);
+        popBP0 <= 1;
+        popBP1 <= 1;
+        popBP2 <= 1;
+        popBP3 <= 1;
+
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        popBP1 <= 0;
+        popBP2 <= 0;
+        popBP3 <= 0;
+
+        @(posedge clk);
+        popBP0 <= 0;
+
+        repeat(11) begin
+            @(posedge clk);
+        end
+
+        @(posedge clk);
+        popBP0 <= 1;
+
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        @(posedge clk);
+        popBP0 <= 0;
 
 
 
 
-        #20 $finish;
+
+
+        #40 $finish;
 
     end 
 endmodule

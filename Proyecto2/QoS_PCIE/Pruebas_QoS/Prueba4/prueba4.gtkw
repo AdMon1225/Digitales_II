@@ -1,0 +1,71 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Nov 26 05:02:29 2021
+[*]
+[dumpfile] "/home/adrian/Documents/Digitales_II/Proyecto2/QoS_PCIE/QOS.vcd"
+[dumpfile_mtime] "Fri Nov 26 04:55:44 2021"
+[dumpfile_size] 2196932
+[savefile] "/home/adrian/Documents/Digitales_II/Proyecto2/QoS_PCIE/Pruebas_QoS/Prueba4/prueba4.gtkw"
+[timestart] 0
+[size] 1848 911
+[pos] -39 -39
+*-5.763817 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[treeopen] testbench.QoS.
+[sst_width] 233
+[signals_width] 178
+[sst_expanded] 1
+[sst_vpaned_height] 252
+@28
+testbench.clk
+testbench.reset
+testbench.init
+@22
+testbench.umbralHigh[3:0]
+testbench.umbralLow[3:0]
+testbench.data_in[11:0]
+@28
+testbench.push
+testbench.active_out
+@200
+-FIFOYP0
+@22
+testbench.QoS.FIFOYP0.fifo_in[11:0]
+testbench.QoS.FIFOYP0.fifo_out[11:0]
+@28
+testbench.QoS.FIFOYP0.fifo_wr
+testbench.QoS.FIFOYP0.fifo_rd
+testbench.QoS.FIFOYP0.almost_full
+@200
+-FIFOYP1
+@22
+testbench.QoS.FIFOYP1.fifo_in[11:0]
+testbench.QoS.FIFOYP1.fifo_out[11:0]
+@28
+testbench.QoS.FIFOYP1.fifo_wr
+testbench.QoS.FIFOYP1.fifo_rd
+testbench.QoS.FIFOYP1.almost_full
+@200
+-FIFOYP2
+@22
+testbench.QoS.FIFOYP2.fifo_in[11:0]
+testbench.QoS.FIFOYP2.fifo_out[11:0]
+@28
+testbench.QoS.FIFOYP2.fifo_wr
+testbench.QoS.FIFOYP2.fifo_rd
+testbench.QoS.FIFOYP2.almost_full
+@200
+-FIFOYP3
+@22
+testbench.QoS.FIFOYP3.fifo_in[11:0]
+testbench.QoS.FIFOYP3.fifo_out[11:0]
+@28
+testbench.QoS.FIFOYP3.fifo_wr
+testbench.QoS.FIFOYP3.fifo_rd
+testbench.QoS.FIFOYP3.almost_full
+@200
+-FIFO empties
+@22
+testbench.QoS.FSM.empty[9:0]
+[pattern_trace] 1
+[pattern_trace] 0
