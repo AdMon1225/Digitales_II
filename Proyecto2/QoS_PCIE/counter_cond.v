@@ -88,6 +88,7 @@ module counter_cond
 	    
         // se pasan los counter a la salida
         if (IDLE && req)begin
+            valid = 1;
             case (idx)
 
                 3'b000: 
@@ -114,11 +115,7 @@ module counter_cond
                 begin
                     data_out = counter4;
                 end
-
             endcase
-
-            valid = 1;
-
         end
 
         else begin

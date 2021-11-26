@@ -20,6 +20,6 @@ run:
 	sed -i 's/fifo_dataout1/fifo_dataout1_sint/' QoS_sint.v
 	sed -i 's/fifo_dataout2/fifo_dataout2_sint/' QoS_sint.v
 	sed -i 's/fifo_dataout3/fifo_dataout3_sint/' QoS_sint.v
-	iverilog testbench.v -o QOSsignals
-	vvp QOSsignals
-	gtkwave QOS.vcd
+	iverilog testbench.v -o Signals
+	vvp Signals
+	gtkwave prueba5.vcd

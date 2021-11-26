@@ -293,14 +293,14 @@ module QoS(
         // Inputs
         .clk  (clk),
         .req  (req),
-        .IDLE  (idle),
+        .IDLE  (idle_out),
         .reset_L  (reset),
         .idx  (idx[2:0]),
         .fifo0_pop  (popBP0),
         .fifo1_pop  (popBP1),
         .fifo2_pop  (popBP2),
         .fifo3_pop  (popBP3),
-        .fifo4_pop  (active_out));
+        .fifo4_pop  (popA2));
 
 
 

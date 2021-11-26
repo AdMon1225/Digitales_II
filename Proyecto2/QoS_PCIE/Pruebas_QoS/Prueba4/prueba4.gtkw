@@ -1,19 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Fri Nov 26 05:02:29 2021
+[*] Fri Nov 26 14:07:29 2021
 [*]
-[dumpfile] "/home/adrian/Documents/Digitales_II/Proyecto2/QoS_PCIE/QOS.vcd"
-[dumpfile_mtime] "Fri Nov 26 04:55:44 2021"
+[dumpfile] "/home/adrian/Documents/Digitales_II/Proyecto2/QoS_PCIE/prueba4.vcd"
+[dumpfile_mtime] "Fri Nov 26 14:03:18 2021"
 [dumpfile_size] 2196932
-[savefile] "/home/adrian/Documents/Digitales_II/Proyecto2/QoS_PCIE/Pruebas_QoS/Prueba4/prueba4.gtkw"
+[savefile] "/home/adrian/Documents/Digitales_II/Proyecto2/Pruebas_QoS/Prueba4/prueba4.gtkw"
 [timestart] 0
 [size] 1848 911
 [pos] -39 -39
-*-5.763817 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-5.775329 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [treeopen] testbench.QoS.
 [sst_width] 233
-[signals_width] 178
+[signals_width] 189
 [sst_expanded] 1
 [sst_vpaned_height] 252
 @28

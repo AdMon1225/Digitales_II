@@ -637,8 +637,6 @@ module QoS_sint(clk, data_in, popBP0, popBP1, popBP2, popBP3, req, push, idx, va
   wire [11:0] fifo_outYP3;
   (* src = "QoS_sint.v:33" *)
   wire [11:0] fifo_outYSolo;
-  (* src = "QoS_sint.v:296" *)
-  wire idle;
   (* src = "QoS_sint.v:24" *)
   output idle_out_sint;
   (* src = "QoS_sint.v:17" *)
@@ -889,14 +887,14 @@ module QoS_sint(clk, data_in, popBP0, popBP1, popBP2, popBP3, req, push, idx, va
   (* module_not_derived = 32'd1 *)
   (* src = "QoS_sint.v:289" *)
   counter_sint contadores (
-    .IDLE(idle),
+    .IDLE(idle_out_sint),
     .clk(clk),
     .data_out(data),
     .fifo0_pop(popBP0),
     .fifo1_pop(popBP1),
     .fifo2_pop(popBP2),
     .fifo3_pop(popBP3),
-    .fifo4_pop(active_out_sint),
+    .fifo4_pop(popA2),
     .idx(idx),
     .req(req),
     .reset_L(reset),
@@ -3266,9 +3264,9 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   wire _289_;
   wire _290_;
   wire _291_;
-  (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:432" *)
+  (* src = "counter_sint.v:114|counter_cond.v:92|<techmap.v>:432" *)
   wire [39:0] _292_;
-  (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:428" *)
+  (* src = "counter_sint.v:114|counter_cond.v:92|<techmap.v>:428" *)
   wire [7:0] _293_;
   wire _294_;
   wire _295_;
@@ -3295,7 +3293,7 @@ module counter_sint(clk, req, IDLE, reset_L, idx, fifo0_pop, fifo1_pop, fifo2_po
   (* src = "counter_sint.v:72|counter_cond.v:57|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "4" *)
   wire [31:0] _308_;
-  (* src = "counter_sint.v:113|counter_cond.v:91|<techmap.v>:445" *)
+  (* src = "counter_sint.v:114|counter_cond.v:92|<techmap.v>:445" *)
   wire _309_;
   (* src = "counter_sint.v:52|counter_cond.v:57|<techmap.v>:260|<techmap.v>:222" *)
   wire _310_;

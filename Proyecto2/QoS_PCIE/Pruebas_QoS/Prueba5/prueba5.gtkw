@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Nov 26 15:24:05 2021
+[*]
+[dumpfile] "/home/adrian/Documents/Digitales_II/Proyecto2/QoS_PCIE/prueba5.vcd"
+[dumpfile_mtime] "Fri Nov 26 15:20:02 2021"
+[dumpfile_size] 1739094
+[savefile] "/home/adrian/Documents/Digitales_II/Proyecto2/QoS_PCIE/Pruebas_QoS/Prueba5/prueba5.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] 283 91
+*-3.889941 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 233
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@28
+testbench.clk
+@22
+testbench.data_in[11:0]
+@28
+testbench.push
+testbench.active_out
+testbench.active_out_sint
+@200
+-Salidas FIFOs
+@22
+testbench.fifo_dataout0[11:0]
+testbench.fifo_dataout0_sint[11:0]
+testbench.fifo_dataout1[11:0]
+testbench.fifo_dataout1_sint[11:0]
+testbench.fifo_dataout2[11:0]
+testbench.fifo_dataout2_sint[11:0]
+testbench.fifo_dataout3[11:0]
+testbench.fifo_dataout3_sint[11:0]
+@28
+testbench.popBP0
+testbench.popBP1
+testbench.popBP2
+testbench.popBP3
+@200
+-Contadores
+@28
+testbench.idle_out
+testbench.idle_out_sint
+testbench.req
+testbench.idx[2:0]
+@22
+testbench.data[7:0]
+testbench.data_sint[7:0]
+@28
+testbench.valid
+[pattern_trace] 1
+[pattern_trace] 0
