@@ -7,7 +7,7 @@ module probador(
     output reg req, 
     output reg [2:0] idx,
     input valid, valid_sint,
-    input [4:0] data, data_sint,
+    input [7:0] data, data_sint,
 
     // Maquina de Estados
     output reg reset, init, 

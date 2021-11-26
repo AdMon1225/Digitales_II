@@ -22,7 +22,7 @@ module probador(
     always #1 clk <= ~clk; 
 
     initial begin
-        $dumpfile("QOS.vcd");
+        $dumpfile("prueba4.vcd");
         $dumpvars;
 
         data_in <= 0;
