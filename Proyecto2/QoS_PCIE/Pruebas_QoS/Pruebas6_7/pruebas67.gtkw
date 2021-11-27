@@ -1,0 +1,58 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Nov 27 03:27:22 2021
+[*]
+[dumpfile] "/home/tessa/Documents/QoS_PCIE_CHICAS/QOS67.vcd"
+[dumpfile_mtime] "Sat Nov 27 03:16:22 2021"
+[dumpfile_size] 1823296
+[savefile] "/home/tessa/Desktop/pruebas67.gtkw"
+[timestart] 0
+[size] 1848 886
+[pos] -39 -39
+*-4.145051 112 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[treeopen] testbench.QoS.
+[treeopen] testbench.QoSEstr.
+[sst_width] 233
+[signals_width] 262
+[sst_expanded] 1
+[sst_vpaned_height] 244
+@28
+testbench.clk
+testbench.reset
+testbench.push
+testbench.active_out
+testbench.active_out_sint
+@22
+testbench.QoS.data_in[11:0]
+testbench.QoSEstr.fifo_dataout0_sint[11:0]
+testbench.QoSEstr.fifo_dataout1_sint[11:0]
+testbench.QoSEstr.fifo_dataout2_sint[11:0]
+testbench.QoSEstr.fifo_dataout3_sint[11:0]
+testbench.QoS.fifo_dataout0[11:0]
+testbench.QoS.fifo_dataout1[11:0]
+testbench.QoS.fifo_dataout2[11:0]
+testbench.QoS.fifo_dataout3[11:0]
+testbench.umbralHigh[3:0]
+testbench.umbralLow[3:0]
+@28
+testbench.popBP0
+testbench.popBP1
+testbench.popBP2
+testbench.popBP3
+@22
+testbench.QoS.FSM.empty[9:0]
+@200
+-
+-Contadores
+@28
+testbench.idle_out
+testbench.idle_out_sint
+testbench.idx[2:0]
+@22
+testbench.data[7:0]
+testbench.data_sint[7:0]
+@28
+testbench.valid
+[pattern_trace] 1
+[pattern_trace] 0
