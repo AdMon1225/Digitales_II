@@ -6,8 +6,6 @@ module arbitro2(
     output reg pop,
     output reg [3:0] push);
 
-    integer i;
-
     always @(*) begin
         pop = 0;
         push = 0;

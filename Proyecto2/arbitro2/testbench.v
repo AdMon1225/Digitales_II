@@ -6,8 +6,8 @@
 module testbench();
 
 wire [3:0] almost_fullFIFO, push, pushSynth;
-wire [11:0] muxout;
-wire reset, clk, emptyFIFO, pop, popSynth;
+wire [11:0] demuxin;
+wire reset, clk, active, emptyFIFO, pop, popSynth;
 
 arbitro2 arbitroCond (/*AUTOINST*/
 		      // Outputs
@@ -16,7 +16,8 @@ arbitro2 arbitroCond (/*AUTOINST*/
 		      // Inputs
 		      .reset		(reset),
 		      .clk		(clk),
-		      .muxout		(muxout[11:0]),
+			  .active (active),
+		      .demuxin		(demuxin[11:0]),
 		      .emptyFIFO	(emptyFIFO),
 		      .almost_fullFIFO	(almost_fullFIFO[3:0]));
 
@@ -27,15 +28,17 @@ arbitro2Synth arbitroSynth (/*AUTOINST*/
 			    // Inputs
 			    .almost_fullFIFO	(almost_fullFIFO[3:0]),
 			    .clk		(clk),
+				.active (active),
 			    .emptyFIFO		(emptyFIFO),
-			    .muxout		(muxout[11:0]),
+			    .demuxin		(demuxin[11:0]),
 			    .reset		(reset));
 
 probador probador (/*AUTOINST*/
 		   // Outputs
 		   .reset		(reset),
 		   .clk			(clk),
-		   .muxout		(muxout[11:0]),
+		   .active (active),
+		   .demuxin		(demuxin[11:0]),
 		   .emptyFIFO		(emptyFIFO),
 		   .almost_fullFIFO	(almost_fullFIFO[3:0]),
 		   // Inputs

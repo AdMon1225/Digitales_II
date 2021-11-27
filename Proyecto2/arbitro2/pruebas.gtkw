@@ -1,27 +1,28 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Tue Nov 16 21:51:11 2021
+[*] Sat Nov 27 05:21:19 2021
 [*]
 [dumpfile] "/home/adrian/Documents/Digitales_II/Proyecto2/arbitro2/verificacion.vcd"
-[dumpfile_mtime] "Tue Nov 16 21:46:16 2021"
-[dumpfile_size] 4836
+[dumpfile_mtime] "Sat Nov 27 05:17:32 2021"
+[dumpfile_size] 7396
 [savefile] "/home/adrian/Documents/Digitales_II/Proyecto2/arbitro2/pruebas.gtkw"
 [timestart] 0
-[size] 1848 911
-[pos] -39 -39
-*-2.899695 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1104 600
+[pos] -8 66
+*-3.903824 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 233
-[signals_width] 222
+[signals_width] 190
 [sst_expanded] 1
-[sst_vpaned_height] 252
+[sst_vpaned_height] 144
 @28
 testbench.clk
 testbench.reset
-testbench.emptyFIFO
+testbench.active
 @22
+testbench.demuxin[11:0]
 testbench.almost_fullFIFO[3:0]
 @28
-testbench.muxout[11:0]
+testbench.emptyFIFO
 testbench.pop
 testbench.popSynth
 testbench.push[3:0]

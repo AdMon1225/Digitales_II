@@ -1,7 +1,8 @@
 module probador(
-    output reg reset, clk,
+    output reg reset, clk, active,
     output reg [3:0] emptyFIFO,
     output reg [3:0] almost_fullFIFO, 
+    output reg [11:0] demuxin,
     input [3:0] pop, popSynth,
     input [3:0] push, pushSynth);
 
@@ -13,8 +14,10 @@ module probador(
         $dumpvars();
 
         reset <= 0;
+        active <= 0;
         emptyFIFO <= 0;
         almost_fullFIFO <= 0;
+        demuxin <= 0; 
 
         @(posedge clk);
 
@@ -30,20 +33,31 @@ module probador(
 
         @(posedge clk);
         emptyFIFO <= 'b1111;
+        active <= 1; 
 
         @(posedge clk);
-        emptyFIFO <= 'b0001;
+        emptyFIFO <= 'b1111;
+
+        @(posedge clk);
+        emptyFIFO <= 'b1111;
+
+        @(posedge clk);
+        emptyFIFO <= 'b1111;
+        demuxin <= 'hABC;
+
+        @(posedge clk);
+        emptyFIFO <= 0;
+
+        @(posedge clk);
 
         @(posedge clk);
         
-
-        @(posedge clk);
-        emptyFIFO <= 'b0011;
-
-        @(posedge clk);
-
         @(posedge clk);
         
+        @(posedge clk);
+        
+        @(posedge clk);
+
         @(posedge clk);
 
         @(posedge clk);

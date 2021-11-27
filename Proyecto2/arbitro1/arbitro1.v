@@ -1,17 +1,17 @@
 module arbitro1(
-    input reset, clk,
+    input reset, clk, active,
     input [3:0] emptyFIFO,
     input [3:0] almost_fullFIFO, 
+    input [11:0] demuxin,
     output reg [3:0] pop,
     output reg [3:0] push);
     
     reg [2:0] contadorP0, contadorP1, contadorP2, contadorP3;
-    integer i;
 
     always @(*) begin
         pop = 0;
 
-        if (reset == 0) begin
+        if (reset == 0 || active == 0) begin
             pop = 0; 
         end
         
@@ -65,6 +65,21 @@ module arbitro1(
     
     always @(*) begin
         push = 0;
-        push = pop;
+        if (demuxin != 0 && almost_fullFIFO == 0 && active == 1) begin
+            if (demuxin[9:8] == 'b00) push[0] = 1;
+            else push[0] = 0;
+
+            if (demuxin[9:8] == 'b01) push[1] = 1;
+            else push[1] = 0;
+
+            if (demuxin[9:8] == 'b10) push[2] = 1;
+            else push[2] = 0;
+
+            if (demuxin[9:8] == 'b11) push[3] = 1;
+            else push[3] = 0;
+        end 
+        else begin
+            push = 0;
+        end  
     end 
 endmodule 
